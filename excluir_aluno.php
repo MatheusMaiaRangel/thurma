@@ -31,7 +31,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     text: 'Você excluiu o aluno com sucesso.',
                     icon: 'success'
                 }).then(function() {
-                    window.location.href = 'index.php'; // Navega para a página de edição novamente
+                    window.location.href = 'listagem.php'; // Navega para a página de edição novamente
                 });
             });
         </script>";

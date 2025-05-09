@@ -258,7 +258,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="col-12 text-center mt-4">
-                <button type="button" class="btn-cinza" onclick="window.location.href='index.php'">Voltar</button>
+                <button type="button" class="btn-cinza" onclick="window.location.href='listagem.php'">Voltar</button>
                 <button type="submit" class="btn-purple">Atualizar</button>
             </div>
         </form>
