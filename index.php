@@ -101,10 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <DIV>
     <div class="text-end mb-3"> 
       <a href="cadastro.html"><img src="img/user.png"></a>
-    </div>
-
-    <div class="text-end mb-3">
-      <button type="button" data-bs-toggle="modal" data-bs-target="#filterModal">
+       <button type="button" data-bs-toggle="modal" data-bs-target="#filterModal">
       <img src="img/filter.png">
       </button>
     </div>
