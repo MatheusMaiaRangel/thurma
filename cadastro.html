@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Aluno</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-purple mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="index.php">Thurma</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container bg-white shadow-lg rounded p-4 mb-5">
+  <h2 class="text-center text-purple mb-4">Cadastro do Aluno</h2>
+  <form id="cadastroForm" action="cadastrar_aluno.php" method="POST">
+    <div class="row g-3">
+
+      <div class="col-md-6">
+        <label class="form-label">Nome:</label>
+        <input type="text" class="form-control" name="nome" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Nome Social:</label>
+        <input type="text" class="form-control" name="nome_social">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">CPF:</label>
+        <input type="text" class="form-control" id="cpf" name="cpf" maxlength="14" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">RG:</label>
+        <input type="text" class="form-control" id="rg" name="rg" maxlength="12">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Data de Nascimento:</label>
+        <input type="date" class="form-control" name="data_nascimento" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Nacionalidade:</label>
+        <input type="text" class="form-control" name="nacionalidade" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Possui deficiência?</label>
+        <select class="form-select" name="deficiencia" required>
+          <option value="">Selecione</option>
+          <option value="nao">Não</option>
+          <option value="sim">Sim</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Nome do Pai:</label>
+        <input type="text" class="form-control" name="nome_pai">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Nome da Mãe:</label>
+        <input type="text" class="form-control" name="nome_mae">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Responsável:</label>
+        <input type="text" class="form-control" name="responsavel" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">RG do Responsável:</label>
+        <input type="text" class="form-control" id="rg_responsavel" name="rg_responsavel">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Tipo de Responsável:</label>
+        <input type="text" class="form-control" name="tipo_responsavel">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Telefone do Responsável:</label>
+        <input type="text" class="form-control" id="tel_responsavel" name="tel_responsavel" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Onde trabalha o responsável:</label>
+        <input type="text" class="form-control" name="trabalho_responsavel">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Telefone do trabalho do responsável:</label>
+        <input type="text" class="form-control" id="tel_trabalho_responsavel" name="tel_trabalho_responsavel">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Renda do responsável:</label>
+        <input type="number" class="form-control" name="renda_responsavel" min="0" step="0.01">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Email do responsável:</label>
+        <input type="email" class="form-control" name="email_responsavel">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Email do aluno:</label>
+        <input type="email" class="form-control" name="email_aluno">
+      </div>
+
+      <div class="col-md-12">
+        <label class="form-label">Endereço:</label>
+        <input type="text" class="form-control" name="endereco">
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Bairro:</label>
+        <input type="text" class="form-control" name="bairro">
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Cidade:</label>
+        <input type="text" class="form-control" name="cidade">
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">UF:</label>
+        <select class="form-select" name="uf" required>
+          <option value="">Selecione</option>
+          <!-- lista de estados -->
+          <option value="">Selecione</option>
+          <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
+          <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
+          <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
+          <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
+          <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
+          <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
+          <option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option>
+          <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
+          <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">CEP:</label>
+        <input type="text" class="form-control" id="cep" name="cep" maxlength="9" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Complemento:</label>
+        <input type="text" class="form-control" name="complemento">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Telefone fixo:</label>
+        <input type="text" class="form-control" id="telefone_fixo" name="telefone_fixo">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Celular do Responsável:</label>
+        <input type="text" class="form-control" id="cel_responsavel" name="cel_responsavel">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Cor do aluno:</label>
+        <input type="text" class="form-control" name="cor" maxlength="50">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">RA (Registro do Aluno):</label>
+        <input type="text" class="form-control" name="ra" maxlength="5" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Registro do SUS:</label>
+        <input type="text" class="form-control" name="registro_sus" maxlength="15">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">NIS:</label>
+        <input type="text" class="form-control" name="nis" maxlength="11">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Tipo Sanguíneo:</label>
+        <select class="form-select" name="tipo_sanguineo" required>
+          <option value="">Selecione</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Medicamento:</label>
+        <input type="text" class="form-control" name="medicamento" maxlength="255">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Gênero:</label>
+        <input type="text" class="form-control" name="genero" maxlength="20">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Tem gêmeos?</label>
+        <select class="form-select" name="tem_gemeos">
+          <option value="nao">Não</option>
+          <option value="sim">Sim</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Quantos gêmeos?</label>
+        <input type="number" class="form-control" name="quantos_gemeos" min="0" max="10">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Sala</label>
+        <select class="form-select" name="sala" id="sala" required>
+          <option value="1º Ano Fundamental">1º Ano Fundamental</option>
+          <option value="2º Ano Fundamental">2º Ano Fundamental</option>
+          <option value="3º Ano Fundamental">3º Ano Fundamental</option>
+          <option value="4º Ano Fundamental">4º Ano Fundamental</option>
+          <option value="5º Ano Fundamental">5º Ano Fundamental</option>
+          <option value="6º Ano Fundamental">6º Ano Fundamental</option>
+          <option value="7º Ano Fundamental">7º Ano Fundamental</option>
+          <option value="8º Ano Fundamental">8º Ano Fundamental</option>
+          <option value="9º Ano Fundamental">9º Ano Fundamental</option>
+          <option value="1º Ano Médio">1º Ano Médio</option>
+          <option value="2º Ano Médio">2º Ano Médio</option>
+          <option value="3º Ano Médio">3º Ano Médio</option>
+        </select>
+      </div>
+
+      <div class="col-12 text-center mt-4">
+        <button type="submit" class="btn btn-purple">Cadastrar</button>
+      </div>
+
+    </div>
+  </form>
+  <div class="text-center mt-4">
+    <a href="index.php" class="btn btn-outline-secondary">Voltar para listagem</a>
+  </div>
+  
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/mascaras.js"></script>
+<script>
+  function aplicarMascaraCPF(input) {
+    input.addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '').substring(0, 11);
+      if (value.length > 9)
+        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, '$1.$2.$3-$4');
+      else if (value.length > 6)
+        value = value.replace(/(\d{3})(\d{3})(\d+)/, '$1.$2.$3');
+      else if (value.length > 3)
+        value = value.replace(/(\d{3})(\d+)/, '$1.$2');
+      e.target.value = value;
+    });
+  }
+
+  function aplicarMascaraRG(input) {
+    input.addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '').substring(0, 9);
+      if (value.length > 8)
+        value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{1})/, '$1.$2.$3-$4');
+      else if (value.length > 5)
+        value = value.replace(/(\d{2})(\d{3})(\d+)/, '$1.$2.$3');
+      else if (value.length > 2)
+        value = value.replace(/(\d{2})(\d+)/, '$1.$2');
+      e.target.value = value;
+    });
+  }
+
+  function aplicarMascaraCEP(input) {
+    input.addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '').substring(0, 8);
+      if (value.length > 5)
+        value = value.replace(/(\d{5})(\d+)/, '$1-$2');
+      e.target.value = value;
+    });
+  }
+
+  function aplicarMascaraTelefone(input, tipo = 'celular') {
+    input.addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (tipo === 'celular') {
+        value = value.substring(0, 11);
+        if (value.length > 6)
+          value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+        else if (value.length > 2)
+          value = value.replace(/(\d{2})(\d+)/, '($1) $2');
+      } else {
+        value = value.substring(0, 10);
+        if (value.length > 6)
+          value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+        else if (value.length > 2)
+          value = value.replace(/(\d{2})(\d+)/, '($1) $2');
+      }
+      e.target.value = value;
+    });
+  }
+
+  window.onload = function () {
+    aplicarMascaraCPF(document.getElementById('cpf'));
+    aplicarMascaraRG(document.getElementById('rg'));
+    aplicarMascaraRG(document.getElementById('rg_responsavel'));
+    aplicarMascaraCEP(document.getElementById('cep'));
+    aplicarMascaraTelefone(document.getElementById('tel_responsavel'));
+    aplicarMascaraTelefone(document.getElementById('cel_responsavel'));
+    aplicarMascaraTelefone(document.getElementById('telefone_fixo'), 'fixo');
+    aplicarMascaraTelefone(document.getElementById('tel_trabalho_responsavel'), 'fixo');
+  };
+
+  
+</script>
+</body>
+</html>

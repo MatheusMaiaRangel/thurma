@@ -1,0 +1,61 @@
+body {
+  background: url('background.jpg') repeat;
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+}
+  
+  .bg-purple {
+    background-color: #6f42c1 !important;
+  }
+  
+  .text-purple {
+    color: #6f42c1;
+  }
+  
+
+  label {
+    font-weight: 500;
+  }
+  
+  input, select {
+    border-radius: 6px !important;
+  }
+
+  .btn-purple {
+  background: linear-gradient(135deg, #6f42c1, #9b59b6);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(111, 66, 193, 0.4);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-purple:hover {
+  background: linear-gradient(135deg, #5a32a3, #8246b1);
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(111, 66, 193, 0.5);
+  color: white !important; /* <-- garante que o texto fica branco */
+}
+
+.btn-cinza {
+  background: linear-gradient(135deg, #3f3852, #423c3c);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.btn-cinza:hover {
+  background: linear-gradient(135deg, #3f3852, #423c3c);
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
