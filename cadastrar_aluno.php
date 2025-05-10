@@ -1,9 +1,7 @@
 <?php
 // Conexão com o banco de dados
-$host = 'localhost';
-$db = 'escola';
-$user = 'root'; // Ajuste se necessário
-$pass = ''; // Ajuste se necessário
+include 'conexao.php';
+
 
 // Criando a conexão
 $conn = new mysqli($host, $user, $pass, $db);
