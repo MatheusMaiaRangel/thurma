@@ -91,25 +91,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
   <!-- Estatísticas -->
   <div class="row text-center mb-4">
     <div class="col-md-4">
-      <div class="card card-purple-border">
+      <div class="card card-aluno">
         <div class="card-body">
-          <h5 class="card-title">Total de Alunos</h5>
+          <h5 class="card-title">Total de alunos</h5>
           <p class="card-text fs-3"><?= $stats['total_alunos'] ?? 0 ?></p>
         </div>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card card-purple-border">
+      <div class="card card-masculino">
         <div class="card-body">
-          <h5 class="card-title">Total Masculino</h5>
+          <h5 class="card-title">Total de garotos</h5>
           <p class="card-text fs-3"><?= $stats['total_masculino'] ?? 0 ?></p>
         </div>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card card-purple-border">
+      <div class="card card-feminino">
         <div class="card-body">
-          <h5 class="card-title">Total Feminino</h5>
+          <h5 class="card-title">Total de garotas</h5>
           <p class="card-text fs-3"><?= $stats['total_feminino'] ?? 0 ?></p>
         </div>
       </div>

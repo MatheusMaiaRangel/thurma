@@ -91,7 +91,7 @@ body {
     box-shadow: 0 0 5px rgba(111, 66, 193, 0.5); 
   }*/
 
-    .card-purple-border {
+    .card-purple {
       border: 2px solid #6f42c1; /* Borda roxa */
       border-radius: 8px; /* Bordas arredondadas */
       background: linear-gradient(135deg, #6f42c1, #9b59b6);
@@ -100,7 +100,51 @@ body {
       transition: all 0.3s ease; /* Transição suave para hover */
     }
     
-    .card-purple-border:hover {
+    .card-purple:hover {
       box-shadow: 0 6px 16px rgba(111, 66, 193, 0.4); /* Sombra mais intensa ao passar o mouse */
       transform: scale(1.02); /* Leve aumento no tamanho */
     }
+
+    .card-aluno {
+      border: 2px solid #1cc88a; /* Borda verde */
+      border-radius: 8px; /* Bordas arredondadas */
+      background:#1cc88a;
+      color: white;
+      box-shadow: 0 4px 12px rgba(111, 66, 193, 0.2); /* Sombra leve */
+      transition: all 0.3s ease; /* Transição suave para hover */
+    }
+    
+    .card-aluno:hover {
+      box-shadow: 0 6px 16px rgba(111, 66, 193, 0.4); /* Sombra mais intensa ao passar o mouse */
+      transform: scale(1.02); /* Leve aumento no tamanho */
+    }
+
+    .card-masculino {
+      border: 2px solid #4e73df; /* Borda verde */
+      border-radius: 8px; /* Bordas arredondadas */
+      background:#4e73df;
+      color: white;
+      box-shadow: 0 4px 12px rgba(111, 66, 193, 0.2); /* Sombra leve */
+      transition: all 0.3s ease; /* Transição suave para hover */
+    }
+    
+    .card-masculino:hover {
+      box-shadow: 0 6px 16px rgba(111, 66, 193, 0.4); /* Sombra mais intensa ao passar o mouse */
+      transform: scale(1.02); /* Leve aumento no tamanho */
+    }
+
+    .card-feminino {
+      border: 2px solid #e74a3b; /* Borda verde */
+      border-radius: 8px; /* Bordas arredondadas */
+      background:#e74a3b;
+      color: white;
+      box-shadow: 0 4px 12px rgba(111, 66, 193, 0.2); /* Sombra leve */
+      transition: all 0.3s ease; /* Transição suave para hover */
+    }
+    
+    .card-feminino:hover {
+      box-shadow: 0 6px 16px rgba(111, 66, 193, 0.4); /* Sombra mais intensa ao passar o mouse */
+      transform: scale(1.02); /* Leve aumento no tamanho */
+    }
+
+    /*['', '#4e73df', '#e74a3b'],*/
