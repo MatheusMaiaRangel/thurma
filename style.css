@@ -59,3 +59,48 @@ body {
   transform: scale(1.03);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
+
+.select-purple {
+  border: 2px solid #995fc5; /* Cor roxa */
+  border-radius: 6px; /* Borda arredondada */
+  padding: 5px 10px; /* Espaçamento interno */
+  display: inline-block; /* Garante que a borda envolva o texto */
+  font-weight: 500; /* Deixa o texto mais destacado */
+  color: #995fc5; /* Cor do texto roxa */
+}
+
+  .select-purple:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px rgba(111, 66, 193, 0.5); /* Sombra ao focar */
+  }
+  
+  /* .form-control {
+    border-radius: 6px !important;
+    border: 2px solid #995fc5;
+    padding: 10px; /
+    font-weight: 500; 
+    color: #995fc5; 
+  }
+  
+  .form-control:hover {
+    border-color: #6f42c1; 
+  }
+  
+  .form-control:focus {
+    outline: none; 
+    box-shadow: 0 0 5px rgba(111, 66, 193, 0.5); 
+  }*/
+
+    .card-purple-border {
+      border: 2px solid #6f42c1; /* Borda roxa */
+      border-radius: 8px; /* Bordas arredondadas */
+      background: linear-gradient(135deg, #6f42c1, #9b59b6);
+      color: white;
+      box-shadow: 0 4px 12px rgba(111, 66, 193, 0.2); /* Sombra leve */
+      transition: all 0.3s ease; /* Transição suave para hover */
+    }
+    
+    .card-purple-border:hover {
+      box-shadow: 0 6px 16px rgba(111, 66, 193, 0.4); /* Sombra mais intensa ao passar o mouse */
+      transform: scale(1.02); /* Leve aumento no tamanho */
+    }

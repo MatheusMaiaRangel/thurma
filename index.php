@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
   <!-- Estatísticas -->
   <div class="row text-center mb-4">
     <div class="col-md-4">
-      <div class="card bg-light">
+      <div class="card card-purple-border">
         <div class="card-body">
           <h5 class="card-title">Total de Alunos</h5>
           <p class="card-text fs-3"><?= $stats['total_alunos'] ?? 0 ?></p>
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card bg-light">
+      <div class="card card-purple-border">
         <div class="card-body">
           <h5 class="card-title">Total Masculino</h5>
           <p class="card-text fs-3"><?= $stats['total_masculino'] ?? 0 ?></p>
@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card bg-light">
+      <div class="card card-purple-border">
         <div class="card-body">
           <h5 class="card-title">Total Feminino</h5>
           <p class="card-text fs-3"><?= $stats['total_feminino'] ?? 0 ?></p>
@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
   <form method="POST" class="row g-3">
     <div class="col-md-3">
       <label for="genero" class="form-label">Gênero</label>
-      <select class="form-select" id="genero" name="genero">
+      <select class="form-select select-purple" id="genero" name="genero">
         <option value="">Selecione</option>
         <option value="Masculino" <?= $genero === 'Masculino' ? 'selected' : '' ?>>Masculino</option>
         <option value="Feminino" <?= $genero === 'Feminino' ? 'selected' : '' ?>>Feminino</option>
@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
     </div>
     <div class="col-md-3">
       <label for="sala" class="form-label">Sala</label>
-      <select class="form-select" id="sala" name="sala">
+      <select class="form-select select-purple" id="sala" name="sala">
           <option value="">Selecione</option>
           <option value="1º Ano Fundamental">1º Ano Fundamental</option>
           <option value="2º Ano Fundamental">2º Ano Fundamental</option>
@@ -146,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
     </div>
     <div class="col-md-3">
       <label for="temGemeo" class="form-label">Tem gêmeos</label>
-      <select class="form-select" id="temGemeo" name="temGemeo">
+      <select class="form-select select-purple" id="temGemeo" name="temGemeo">
         <option value="">Selecione</option>
         <option value="sim" <?= $temGemeos === 'sim' ? 'selected' : '' ?>>Sim</option>
         <option value="nao" <?= $temGemeos === 'nao' ? 'selected' : '' ?>>Não</option>
@@ -157,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
       <input type="text" class="form-control" id="nacionalidade" name="nacionalidade" value="<?= htmlspecialchars($nacionalidade) ?>">
     </div>
     <div class="col-md-12 text-end">
-      <button type="submit" class="btn btn-primary">Filtrar</button>
+      <button type="submit" class="btn-purple">Filtrar</button>
     </div>
   </form>
 
