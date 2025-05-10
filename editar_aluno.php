@@ -1,10 +1,7 @@
 <?php
 // Conexão com o banco de dados
-$host = 'localhost';
-$db = 'escola';
-$user = 'root';
-$pass = '';
-$conn = new mysqli($host, $user, $pass, $db);
+include 'conexao.php';
+
 
 if ($conn->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);
