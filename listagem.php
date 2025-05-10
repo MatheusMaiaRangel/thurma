@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nacionalidade = isset($_POST['nacionalidade']) ? trim($_POST['nacionalidade']) : '';
     $dataNascimento = isset($_POST['dataNascimento']) ? $_POST['dataNascimento'] : '';
 
-    // Monta a query com base nos filtros
+    // Monta query com base nos filtros
     $query = "SELECT id, nome, cpf, ra FROM alunos WHERE 1=1";
     $params = [];
     $types = '';
