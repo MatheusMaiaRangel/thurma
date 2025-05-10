@@ -7,6 +7,7 @@ $temGemeos = '';
 $genero = '';
 $nacionalidade = '';
 $dataNascimento = '';
+$sala = '';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $cpf = isset($_POST['cpf']) ? trim($_POST['cpf']) : '';
@@ -14,9 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $genero = isset($_POST['genero']) ? $_POST['genero'] : '';
     $nacionalidade = isset($_POST['nacionalidade']) ? trim($_POST['nacionalidade']) : '';
     $dataNascimento = isset($_POST['dataNascimento']) ? $_POST['dataNascimento'] : '';
-
+    $sala = isset($_POST['sala']) ? trim($_POST['sala']) : '';
     // Monta query com base nos filtros
-    $query = "SELECT id, nome, cpf, ra FROM alunos WHERE 1=1";
+    $query = "SELECT id, nome, cpf, ra, sala FROM alunos WHERE 1=1";
     $params = [];
     $types = '';
 
@@ -45,6 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $params[] = $dataNascimento;
         $types .= 's';
     }
+    if (!empty($sala)) {
+        $query .= " AND sala = ?";
+        $params[] = $sala;
+        $types .= 's';
+    }
 
     $stmt = $conn->prepare($query);
     if ($stmt === false) {
@@ -58,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute();
     $result = $stmt->get_result();
 } else {
-    $result = $conn->query("SELECT id, nome, cpf, ra FROM alunos ORDER BY id DESC");
+    $result = $conn->query("SELECT id, nome, cpf, ra, sala FROM alunos ORDER BY id DESC");
 }
 ?>
 
@@ -117,6 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <th>Nome</th>
           <th>CPF</th>
           <th>RA</th>
+          <th>Sala</th>
           <th>Ações</th>
         </tr>
       </thead>
@@ -128,6 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               <td><?= htmlspecialchars($row['nome']) ?></td>
               <td><?= htmlspecialchars($row['cpf']) ?></td>
               <td><?= htmlspecialchars($row['ra']) ?></td>
+              <td><?= htmlspecialchars($row['sala']) ?></td>
               <td class="text-center">
   <a href="editar_aluno.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning me-2">Editar</a>
   <a href="javascript:void(0);" class="btn btn-sm btn-danger" 
@@ -186,7 +194,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <label for="dataNascimento" class="form-label">Data de Nascimento</label>
             <input type="date" class="form-control" name="dataNascimento" id="dataNascimento">
           </div>
-        </div>
+          <!-- Campo Sala -->
+          <div class="mb-3">
+            <label for="sala" class="form-label">Sala</label>
+            <select class="form-select" name="sala" id="sala">
+              <option value="">Selecione</option>
+              <option value="1º Ano Fundamental">1º Ano Fundamental</option>
+              <option value="2º Ano Fundamental">2º Ano Fundamental</option>
+              <option value="3º Ano Fundamental">3º Ano Fundamental</option>
+              <option value="4º Ano Fundamental">4º Ano Fundamental</option>
+              <option value="5º Ano Fundamental">5º Ano Fundamental</option>
+              <option value="6º Ano Fundamental">6º Ano Fundamental</option>
+              <option value="7º Ano Fundamental">7º Ano Fundamental</option>
+              <option value="8º Ano Fundamental">8º Ano Fundamental</option>
+              <option value="9º Ano Fundamental">9º Ano Fundamental</option>
+              <option value="1º Ano Médio">1º Ano Médio</option>
+              <option value="2º Ano Médio">2º Ano Médio</option>
+              <option value="3º Ano Médio">3º Ano Médio</option>
+            </select>
+          </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
           <button type="submit" class="btn btn-primary">Aplicar Filtros</button>
