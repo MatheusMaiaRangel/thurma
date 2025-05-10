@@ -77,8 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <!-- Navbar -->
@@ -159,7 +158,42 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <button type="submit" class="btn btn-primary">Filtrar</button>
     </div>
   </form>
+
+  <!-- Gráfico -->
+  <div class="mt-5">
+    <canvas id="alunosChart"></canvas>
+  </div>
 </div>
+
+<script>
+  const ctx = document.getElementById('alunosChart').getContext('2d');
+  const alunosChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Total de Alunos', 'Masculino', 'Feminino'],
+      datasets: [{
+        label: 'Quantidade',
+        data: [<?= $stats['total_alunos'] ?? 0 ?>, <?= $stats['total_masculino'] ?? 0 ?>, <?= $stats['total_feminino'] ?? 0 ?>],
+        backgroundColor: ['#4e73df', '#1cc88a', '#e74a3b'],
+        borderColor: ['#4e73df', '#1cc88a', '#e74a3b'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
