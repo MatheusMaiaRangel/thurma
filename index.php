@@ -13,12 +13,14 @@ include 'conexao.php';
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-purple mb-4">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-purple mb-4">
   <div class="container">
     <a class="navbar-brand" href="index.php">Thurma</a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+        <li class="nav-item"><a class="nav-link" href="listagem.php">Listagem</a></li>
     </ul>
     </div>
   </div>

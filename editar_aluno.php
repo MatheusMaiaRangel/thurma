@@ -82,12 +82,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-light">
+
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-purple mb-4">
   <div class="container">
     <a class="navbar-brand" href="index.php">Thurma</a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+        <li class="nav-item"><a class="nav-link" href="listagem.php">Listagem</a></li>
     </ul>
     </div>
   </div>
