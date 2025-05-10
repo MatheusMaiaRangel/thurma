@@ -2,18 +2,16 @@
 include 'conexao.php';
 
 // Inicializa os filtros
-$cpf = '';
 $temGemeos = '';
 $genero = '';
 $nacionalidade = '';
-$dataNascimento = '';
+$sala = '';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $cpf = isset($_POST['cpf']) ? trim($_POST['cpf']) : '';
+if ($_SERVER["REQUEST_METHOD"] === "POST") 
     $temGemeos = isset($_POST['temGemeo']) ? $_POST['temGemeo'] : '';
     $genero = isset($_POST['genero']) ? $_POST['genero'] : '';
     $nacionalidade = isset($_POST['nacionalidade']) ? trim($_POST['nacionalidade']) : '';
-    $dataNascimento = isset($_POST['dataNascimento']) ? $_POST['dataNascimento'] : '';
+    $sala = isset($_POST['sala']) ? trim($_POST['sala']) : '';
 
     // Monta a query com base nos filtros
     $query = "SELECT COUNT(*) AS total_alunos, 
@@ -23,11 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $params = [];
     $types = '';
 
-    if (!empty($cpf)) {
-        $query .= " AND cpf = ?";
-        $params[] = $cpf;
-        $types .= 's';
-    }
     if (!empty($temGemeos)) {
         $query .= " AND tem_gemeos = ?";
         $params[] = $temGemeos;
@@ -38,16 +31,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $params[] = $genero;
         $types .= 's';
     }
+    if (!empty($sala)) {
+        $query .= " AND sala = ?";
+        $params[] = $sala;
+        $types .= 's';
+    }
     if (!empty($nacionalidade)) {
         $query .= " AND nacionalidade = ?";
         $params[] = $nacionalidade;
         $types .= 's';
-    }
-    if (!empty($dataNascimento)) {
-        $query .= " AND data_nascimento = ?";
-        $params[] = $dataNascimento;
-        $types .= 's';
-    }
 
     $stmt = $conn->prepare($query);
     if ($stmt === false) {
@@ -73,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard</title>
+  <title>Relatório de alunos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -127,18 +119,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <!-- Formulário de filtros -->
   <form method="POST" class="row g-3">
     <div class="col-md-3">
-      <label for="cpf" class="form-label">CPF</label>
-      <input type="text" class="form-control" id="cpf" name="cpf" value="<?= htmlspecialchars($cpf) ?>">
-    </div>
-    <div class="col-md-3">
-      <label for="temGemeo" class="form-label">Tem Gêmeos</label>
-      <select class="form-select" id="temGemeo" name="temGemeo">
-        <option value="">Selecione</option>
-        <option value="sim" <?= $temGemeos === 'sim' ? 'selected' : '' ?>>Sim</option>
-        <option value="nao" <?= $temGemeos === 'nao' ? 'selected' : '' ?>>Não</option>
-      </select>
-    </div>
-    <div class="col-md-3">
       <label for="genero" class="form-label">Gênero</label>
       <select class="form-select" id="genero" name="genero">
         <option value="">Selecione</option>
@@ -147,12 +127,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       </select>
     </div>
     <div class="col-md-3">
-      <label for="nacionalidade" class="form-label">Nacionalidade</label>
-      <input type="text" class="form-control" id="nacionalidade" name="nacionalidade" value="<?= htmlspecialchars($nacionalidade) ?>">
+      <label for="sala" class="form-label">Sala</label>
+      <select class="form-select" id="sala" name="sala">
+          <option value="">Selecione</option>
+          <option value="1º Ano Fundamental">1º Ano Fundamental</option>
+          <option value="2º Ano Fundamental">2º Ano Fundamental</option>
+          <option value="3º Ano Fundamental">3º Ano Fundamental</option>
+          <option value="4º Ano Fundamental">4º Ano Fundamental</option>
+          <option value="5º Ano Fundamental">5º Ano Fundamental</option>
+          <option value="6º Ano Fundamental">6º Ano Fundamental</option>
+          <option value="7º Ano Fundamental">7º Ano Fundamental</option>
+          <option value="8º Ano Fundamental">8º Ano Fundamental</option>
+          <option value="9º Ano Fundamental">9º Ano Fundamental</option>
+          <option value="1º Ano Médio">1º Ano Médio</option>
+          <option value="2º Ano Médio">2º Ano Médio</option>
+          <option value="3º Ano Médio">3º Ano Médio</option>
+        </select>
     </div>
     <div class="col-md-3">
-      <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-      <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" value="<?= htmlspecialchars($dataNascimento) ?>">
+      <label for="temGemeo" class="form-label">Tem gêmeos</label>
+      <select class="form-select" id="temGemeo" name="temGemeo">
+        <option value="">Selecione</option>
+        <option value="sim" <?= $temGemeos === 'sim' ? 'selected' : '' ?>>Sim</option>
+        <option value="nao" <?= $temGemeos === 'nao' ? 'selected' : '' ?>>Não</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="nacionalidade" class="form-label">Nacionalidade</label>
+      <input type="text" class="form-control" id="nacionalidade" name="nacionalidade" value="<?= htmlspecialchars($nacionalidade) ?>">
     </div>
     <div class="col-md-12 text-end">
       <button type="submit" class="btn btn-primary">Filtrar</button>
@@ -174,8 +176,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       datasets: [{
         label: 'Quantidade',
         data: [<?= $stats['total_alunos'] ?? 0 ?>, <?= $stats['total_masculino'] ?? 0 ?>, <?= $stats['total_feminino'] ?? 0 ?>],
-        backgroundColor: ['#4e73df', '#1cc88a', '#e74a3b'],
-        borderColor: ['#4e73df', '#1cc88a', '#e74a3b'],
+        backgroundColor: ['#1cc88a', '#4e73df', '#e74a3b'],
+        borderColor: ['#1cc88a', '#4e73df', '#e74a3b'],
         borderWidth: 1
       }]
     },
