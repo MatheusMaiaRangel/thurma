@@ -120,7 +120,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="col-md-6">
                 <label class="form-label">Nacionalidade</label>
-                <input type="text" class="form-control" name="nacionalidade" value="<?= $alunos['nacionalidade'] ?>">
+                <select class="form-select" name="nacionalidade">
+                    <option value="" disabled>Informe o nome do país</option>
+                    <option value="Brasil" <?= $alunos['nacionalidade'] === 'Brasil' ? 'selected' : '' ?>>Brasil</option>
+                    <option value="Argentina" <?= $alunos['nacionalidade'] === 'Argentina' ? 'selected' : '' ?>>Argentina</option>
+                    <option value="Estados Unidos" <?= $alunos['nacionalidade'] === 'Estados Unidos' ? 'selected' : '' ?>>Estados Unidos</option>
+                    <option value="Canadá" <?= $alunos['nacionalidade'] === 'Canadá' ? 'selected' : '' ?>>Canadá</option>
+                    <option value="Portugal" <?= $alunos['nacionalidade'] === 'Portugal' ? 'selected' : '' ?>>Portugal</option>
+                    <option value="Espanha" <?= $alunos['nacionalidade'] === 'Espanha' ? 'selected' : '' ?>>Espanha</option>
+                    <option value="França" <?= $alunos['nacionalidade'] === 'França' ? 'selected' : '' ?>>França</option>
+                    <option value="Alemanha" <?= $alunos['nacionalidade'] === 'Alemanha' ? 'selected' : '' ?>>Alemanha</option>
+                    <option value="Japão" <?= $alunos['nacionalidade'] === 'Japão' ? 'selected' : '' ?>>Japão</option>
+                    <option value="China" <?= $alunos['nacionalidade'] === 'China' ? 'selected' : '' ?>>China</option>
+                    <option value="Índia" <?= $alunos['nacionalidade'] === 'Índia' ? 'selected' : '' ?>>Índia</option>
+                    <!-- Adicione mais países conforme necessário -->
+                </select>
             </div>
             <div class="col-md-6">
                 <label class="form-label">Deficiência</label>
