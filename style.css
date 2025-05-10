@@ -56,6 +56,7 @@ body {
 
 .btn-cinza:hover {
   background: linear-gradient(135deg, #3f3852, #423c3c);
+  color: white !important; /* <-- garante que o texto fica branco */
   transform: scale(1.03);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }

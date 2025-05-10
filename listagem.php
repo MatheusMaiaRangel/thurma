@@ -214,8 +214,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </select>
           </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-primary">Aplicar Filtros</button>
+          <button type="button" class="btn btn-cinza" data-bs-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn btn-purple">Aplicar Filtros</button>
         </div>
       </form>
     </div>

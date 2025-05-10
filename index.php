@@ -7,7 +7,7 @@ $genero = '';
 $nacionalidade = '';
 $sala = '';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $temGemeos = isset($_POST['temGemeo']) ? $_POST['temGemeo'] : '';
     $genero = isset($_POST['genero']) ? $_POST['genero'] : '';
     $nacionalidade = isset($_POST['nacionalidade']) ? trim($_POST['nacionalidade']) : '';
@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
         $query .= " AND nacionalidade = ?";
         $params[] = $nacionalidade;
         $types .= 's';
+    }
 
     $stmt = $conn->prepare($query);
     if ($stmt === false) {
