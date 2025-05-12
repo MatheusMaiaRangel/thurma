@@ -27,7 +27,7 @@ sala_idade = {
     '3º Ano Médio': (17, 18)
 }
 
-paises_exemplo = ['Argentina', 'Angola', 'Alemanha', 'Japão', 'Estados Unidos', 'Itália', 'China', 'França']
+paises_exemplo = ['Afeganistão','África do Sul','Albânia','Alemanha','Andorra','Angola','Antígua e Barbuda','Arábia Saudita','Argélia','Argentina','Armênia','Austrália','Áustria','Azerbaijão','Bahamas','Bahrein','Bangladesh','Barbados','Bélgica','Belize','Benin','Bielorrússia','Bolívia','Bósnia e Herzegovina','Botsuana','Brasil','Brunei','Bulgária','Burquina Faso','Burundi','Butão','Cabo Verde','Camarões','Camboja','Canadá','Catar','Cazaquistão','Chade','Chile','China','Chipre','Colômbia','Comores','Congo','Coreia do Norte','Coreia do Sul','Costa do Marfim','Costa Rica','Croácia','Cuba','Dinamarca','Djibuti','Dominica','Egito','El Salvador','Emirados Árabes Unidos','Equador','Eritreia','Eslováquia','Eslovênia','Espanha','Estados Unidos','Estônia','Eswatini','Etiópia','Fiji','Filipinas','Finlândia','França','Gabão','Gâmbia','Gana','Geórgia','Granada','Grécia','Guatemala','Guiana','Guiné','Guiné Equatorial','Guiné-Bissau','Haiti','Holanda','Honduras','Hungria','Iémen','Ilhas Marshall','Ilhas Salomão','Índia','Indonésia','Irã','Iraque','Irlanda','Islândia','Israel','Itália','Jamaica','Japão','Jordânia','Kiribati','Kuwait','Laos','Lesoto','Letônia','Líbano','Libéria','Líbia','Liechtenstein','Lituânia','Luxemburgo','Macedônia do Norte','Madagáscar','Malásia','Malawi','Maldivas','Mali','Malta','Marrocos','Maurício','Mauritânia','México','Mianmar','Micronésia','Moçambique','Moldávia','Mônaco','Mongólia','Montenegro','Namíbia','Nauru','Nepal','Nicarágua','Níger','Nigéria','Noruega','Nova Zelândia','Omã','Palau','Panamá','Papua-Nova Guiné','Paquistão','Paraguai','Peru','Polônia','Portugal','Quênia','Quirguistão','Reino Unido','República Centro-Africana','República Checa','República Democrática do Congo','República Dominicana','Romênia','Ruanda','Rússia','Saara Ocidental','Saint Kitts e Nevis','Saint Vincent e Granadinas','Samoa','San Marino','Santa Lúcia','São Tomé e Príncipe','Senegal','Serra Leoa','Sérvia','Singapura','Síria','Somália','Sri Lanka','Suazilândia','Sudão','Sudão do Sul','Suécia','Suíça','Suriname','Tailândia','Taiwan','Tajiquistão','Tanzânia','Timor-Leste','Togo','Tonga','Trindade e Tobago','Tunísia','Turcomenistão','Turquia','Tuvalu','Ucrânia','Uganda','Uruguai','Uzbequistão','Vanuatu','Vaticano','Venezuela','Vietnã','Zâmbia','Zimbábue']
 
 def gerar_data_nascimento(faixa_idade):
     idade = random.randint(*faixa_idade)
@@ -37,8 +37,18 @@ def gerar_data_nascimento(faixa_idade):
 
 def gerar_aluno(id, sala):
     idade_range = sala_idade[sala]
-    nome = fake_br.name()
-    nome_social = nome if random.random() > 0.7 else fake_br.first_name()
+    genero = random.choice(['Masculino', 'Feminino', 'Outro'])
+    
+    if genero == 'Masculino':
+        nome = fake_br.name_male()
+    elif genero == 'Feminino':
+        nome = fake_br.name_female()
+    else:  # Gênero "Outro"
+        nome = random.choice([fake_br.name_male(), fake_br.name_female()])
+    
+    # Nome social só se o gênero for "Outro"
+    nome_social = nome if genero != 'Outro' else fake_br.first_name()
+    
     cpf = fake_br.cpf()
     rg = str(random.randint(100000000, 999999999))
     data_nascimento = gerar_data_nascimento(idade_range)
@@ -47,7 +57,7 @@ def gerar_aluno(id, sala):
     nome_mae = fake_br.name_female()
     responsavel = random.choice([nome_pai, nome_mae])
     rg_responsavel = str(random.randint(100000000, 999999999))
-    tipo_responsavel = random.choice(['pai', 'mãe', 'avó', 'tio', 'responsável legal'])
+    tipo_responsavel = random.choice(['Pai', 'Mãe', 'Avó', 'Avô', 'Tio(a)', 'Responsável legal'])
     tel_responsavel = fake_br.phone_number()
     trabalho_responsavel = fake_br.company()
     tel_trabalho_responsavel = fake_br.phone_number()
@@ -68,10 +78,9 @@ def gerar_aluno(id, sala):
     nis = str(fake_br.random_number(digits=11, fix_len=True))
     tipo_sanguineo = random.choice(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'])
     medicamento = '' if random.random() > 0.8 else fake_br.word()
-    genero = random.choice(['Masculino', 'Feminino', 'Não binário'])
     tem_gemeos = random.choice(['sim', 'nao'])
-    quantos_gemeos = random.randint(1, 3) if tem_gemeos == 'sim' else 0
-    pais = 'Brasil' if random.random() > 0.15 else random.choice(paises_exemplo)
+    quantos_gemeos = random.randint(1, 9) if tem_gemeos == 'sim' else 0
+    pais = 'Brasil' if random.random() > 0.0064 else random.choice(paises_exemplo)  # 0.64% chance de ser de outro país
 
     return (
         id, nome, nome_social, cpf, rg, data_nascimento, deficiencia, nome_pai, nome_mae, responsavel,
