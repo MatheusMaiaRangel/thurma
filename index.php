@@ -16,7 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Monta a query com base nos filtros
     $query = "SELECT COUNT(*) AS total_alunos, 
                      SUM(CASE WHEN genero = 'Masculino' THEN 1 ELSE 0 END) AS total_masculino,
-                     SUM(CASE WHEN genero = 'Feminino' THEN 1 ELSE 0 END) AS total_feminino
+                     SUM(CASE WHEN genero = 'Feminino' THEN 1 ELSE 0 END) AS total_feminino,
+                     SUM(CASE WHEN genero = 'Outro' THEN 1 ELSE 0 END) AS total_outro
               FROM alunos WHERE 1=1";
     $params = [];
     $types = '';
@@ -57,7 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     $result = $conn->query("SELECT COUNT(*) AS total_alunos, 
                                    SUM(CASE WHEN genero = 'Masculino' THEN 1 ELSE 0 END) AS total_masculino,
-                                   SUM(CASE WHEN genero = 'Feminino' THEN 1 ELSE 0 END) AS total_feminino
+                                   SUM(CASE WHEN genero = 'Feminino' THEN 1 ELSE 0 END) AS total_feminino,
+                                   SUM(CASE WHEN genero = 'Outro' THEN 1 ELSE 0 END) AS total_outro
                             FROM alunos");
     $stats = $result->fetch_assoc();
 }
@@ -91,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   <!-- Estatísticas -->
   <div class="row text-center mb-4">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="card card-aluno">
         <div class="card-body">
           <h5 class="card-title">Total de alunos</h5>
@@ -99,19 +101,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="card card-masculino">
         <div class="card-body">
-          <h5 class="card-title">Total de garotos</h5>
+          <h5 class="card-title">Masculino</h5>
           <p class="card-text fs-3"><?= $stats['total_masculino'] ?? 0 ?></p>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="card card-feminino">
         <div class="card-body">
-          <h5 class="card-title">Total de garotas</h5>
+          <h5 class="card-title">Feminino</h5>
           <p class="card-text fs-3"><?= $stats['total_feminino'] ?? 0 ?></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card card-outro">
+        <div class="card-body">
+          <h5 class="card-title">Outro</h5>
+          <p class="card-text fs-3"><?= $stats['total_outro'] ?? 0 ?></p>
         </div>
       </div>
     </div>
@@ -125,6 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <option value="">Selecione</option>
         <option value="Masculino" <?= $genero === 'Masculino' ? 'selected' : '' ?>>Masculino</option>
         <option value="Feminino" <?= $genero === 'Feminino' ? 'selected' : '' ?>>Feminino</option>
+        <option value="Outro" <?= $genero === 'Outro' ? 'selected' : '' ?>>Outro</option>
       </select>
     </div>
     <div class="col-md-3">
@@ -374,12 +385,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   const alunosChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Total de Alunos', 'Masculino', 'Feminino'],
+      labels: ['Total de Alunos', 'Masculino', 'Feminino','Outro'],
       datasets: [{
         label: 'Quantidade',
-        data: [<?= $stats['total_alunos'] ?? 0 ?>, <?= $stats['total_masculino'] ?? 0 ?>, <?= $stats['total_feminino'] ?? 0 ?>],
-        backgroundColor: ['#1cc88a', '#4e73df', '#e74a3b'],
-        borderColor: ['#1cc88a', '#4e73df', '#e74a3b'],
+        data: [<?= $stats['total_alunos'] ?? 0 ?>, <?= $stats['total_masculino'] ?? 0 ?>, <?= $stats['total_feminino'] ?? 0 ?>, <?= $stats['total_outro'] ?? 0 ?>],
+        backgroundColor: ['#1cc88a', '#4e73df', '#e74a3b', '#f6c23e'],
+        borderColor: ['#1cc88a', '#4e73df', '#e74a3b', '#f6c23e'],
         borderWidth: 1
       }]
     },

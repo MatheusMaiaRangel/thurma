@@ -148,4 +148,18 @@ body {
       transform: scale(1.02); /* Leve aumento no tamanho */
     }
 
+    .card-outro {
+      border: 2px solid #f6c23e; /* Borda verde */
+      border-radius: 8px; /* Bordas arredondadas */
+      background:#f6c23e;
+      color: white;
+      box-shadow: 0 4px 12px rgba(111, 66, 193, 0.2); /* Sombra leve */
+      transition: all 0.3s ease; /* Transição suave para hover */
+    }
+    
+    .card-outro:hover {
+      box-shadow: 0 6px 16px rgba(111, 66, 193, 0.4); /* Sombra mais intensa ao passar o mouse */
+      transform: scale(1.02); /* Leve aumento no tamanho */
+    }
+
     /*['', '#4e73df', '#e74a3b'],*/
