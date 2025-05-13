@@ -37,7 +37,11 @@ def gerar_data_nascimento(faixa_idade):
 
 def gerar_aluno(id, sala):
     idade_range = sala_idade[sala]
-    genero = random.choice(['Masculino', 'Feminino', 'Outro'])
+    genero = random.choices(
+    ['Masculino', 'Feminino', 'Outro'],
+    weights=[49, 49, 2],  # 49% Masculino, 49% Feminino, 2% Outro (Segundo o https://jornal.unesp.br/2021/11/12/estudo-pioneiro-na-america-latina-mapeia-adultos-transgeneros-e-nao-binarios-no-brasil/)
+    k=1
+)[0]
     
     if genero == 'Masculino':
         nome = fake_br.name_male()
@@ -78,7 +82,7 @@ def gerar_aluno(id, sala):
     nis = str(fake_br.random_number(digits=11, fix_len=True))
     tipo_sanguineo = random.choice(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'])
     medicamento = '' if random.random() > 0.8 else fake_br.word()
-    tem_gemeos = random.choice(['sim', 'nao'])
+    tem_gemeos = 'sim' if random.random() < 0.035 else 'nao'  # 3,5% de chance de ter gêmeos (Segundo o https://veja.abril.com.br/saude/gravidez-natural-tardia-aumenta-chance-de-gemeos-revela-estudo)
     quantos_gemeos = random.randint(1, 9) if tem_gemeos == 'sim' else 0
     pais = 'Brasil' if random.random() > 0.0064 else random.choice(paises_exemplo)  # 0.64% chance de ser de outro país
 
