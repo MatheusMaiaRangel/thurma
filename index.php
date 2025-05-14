@@ -73,7 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </head>
 <body>
 <!-- Navbar -->
@@ -375,33 +374,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
   </form>
 
-  <!-- Gráfico -->
-  <div class="mt-5">
-    <!-- Contêiner para os gráficos -->
-    <div class="d-flex justify-content-center align-items-center gap-4">
-      <!-- Canvas do gráfico de colunas -->
-      <div>
-        <h5 class="text-center">Gráfico de Colunas</h5>
-        <canvas id="barChart" width="400" height="400"></canvas>
-      </div>
+  <!-- Gráficos lado a lado -->
+  <div class="d-flex justify-content-center align-items-start gap-5">
+    <!-- Gráfico de colunas -->
+    <div>
+      <h5 class="text-center">Gráfico de Colunas</h5>
+      <canvas id="barChart" style="width: 400px; height: 400px;"></canvas>
+    </div>
 
-      <!-- Canvas do gráfico de pizza -->
-      <div>
-        <h5 class="text-center">Gráfico de Pizza</h5>
-        <canvas id="pieChart" width="400" height="400"></canvas>
-      </div>
+    <!-- Gráfico de pizza -->
+    <div>
+      <h5 class="text-center">Gráfico de Pizza</h5>
+      <canvas id="pieChart" style="width: 400px; height: 400px;"></canvas>
     </div>
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
 <script>
   // Dados do gráfico
   const chartData = {
-    labels: ['Masculino', 'Feminino', 'Outro'],
+    labels: ['Masculino', 'Feminino', 'Outro'], // Gêneros
     datasets: [{
-      label: 'Quantidade',
       data: [<?= $stats['total_masculino'] ?? 0 ?>, <?= $stats['total_feminino'] ?? 0 ?>, <?= $stats['total_outro'] ?? 0 ?>],
-      backgroundColor: ['#4e73df', '#e74a3b', '#f6c23e'],
+      backgroundColor: ['#4e73df', '#e74a3b', '#f6c23e'], // Cores correspondentes
       borderWidth: 0
     }]
   };
@@ -411,15 +409,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     responsive: true,
     plugins: {
       legend: {
-        display: true,
-        position: 'top',
+        display: true, // Exibe a legenda
+        position: 'top', // Posição da legenda no topo
         labels: {
           font: {
             size: 16,
             family: 'Arial, sans-serif',
             weight: 'bold'
           },
-          color: '#333'
+          color: '#333' // Cor do texto da legenda
         }
       },
       datalabels: {
