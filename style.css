@@ -162,10 +162,5 @@ body {
       transform: scale(1.02); /* Leve aumento no tamanho */
     }
 
-     #alunosChart {
-    width: 400px; /* Define a largura máxima */
-    height: 400px; /* Define a altura máxima */
-    margin: 0 auto; /* Centraliza o gráfico */
-  }
 
     /*['', '#4e73df', '#e74a3b'],*/
