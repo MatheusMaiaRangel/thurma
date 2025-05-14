@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 </head>
 <body>
 <!-- Navbar -->
@@ -376,37 +377,83 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   <!-- Gráfico -->
   <div class="mt-5">
-    <canvas id="alunosChart"></canvas>
+    <!-- Contêiner para os gráficos -->
+    <div class="d-flex justify-content-center align-items-center gap-4">
+      <!-- Canvas do gráfico de colunas -->
+      <div>
+        <h5 class="text-center">Gráfico de Colunas</h5>
+        <canvas id="barChart" width="400" height="400"></canvas>
+      </div>
+
+      <!-- Canvas do gráfico de pizza -->
+      <div>
+        <h5 class="text-center">Gráfico de Pizza</h5>
+        <canvas id="pieChart" width="400" height="400"></canvas>
+      </div>
+    </div>
   </div>
 </div>
 
 <script>
-  const ctx = document.getElementById('alunosChart').getContext('2d');
-  const alunosChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Total de Alunos', 'Masculino', 'Feminino','Outro'],
-      datasets: [{
-        label: 'Quantidade',
-        data: [<?= $stats['total_alunos'] ?? 0 ?>, <?= $stats['total_masculino'] ?? 0 ?>, <?= $stats['total_feminino'] ?? 0 ?>, <?= $stats['total_outro'] ?? 0 ?>],
-        backgroundColor: ['#1cc88a', '#4e73df', '#e74a3b', '#f6c23e'],
-        borderColor: ['#1cc88a', '#4e73df', '#e74a3b', '#f6c23e'],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          display: false
+  // Dados do gráfico
+  const chartData = {
+    labels: ['Masculino', 'Feminino', 'Outro'],
+    datasets: [{
+      label: 'Quantidade',
+      data: [<?= $stats['total_masculino'] ?? 0 ?>, <?= $stats['total_feminino'] ?? 0 ?>, <?= $stats['total_outro'] ?? 0 ?>],
+      backgroundColor: ['#4e73df', '#e74a3b', '#f6c23e'],
+      borderWidth: 0
+    }]
+  };
+
+  // Configurações padrão do gráfico
+  const chartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top',
+        labels: {
+          font: {
+            size: 16,
+            family: 'Arial, sans-serif',
+            weight: 'bold'
+          },
+          color: '#333'
         }
       },
-      scales: {
-        y: {
-          beginAtZero: true
+      datalabels: {
+        color: '#fff',
+        font: {
+          size: 14,
+          weight: 'bold'
+        },
+        formatter: (value, context) => {
+          const total = context.dataset.data.reduce((acc, val) => acc + val, 0);
+          const percentage = ((value / total) * 100).toFixed(1);
+          return `${percentage}%`;
         }
       }
-    }
+    },
+    hoverOffset: 15
+  };
+
+  // Inicializa o gráfico de colunas
+  const barCtx = document.getElementById('barChart').getContext('2d');
+  const barChart = new Chart(barCtx, {
+    type: 'bar', // Gráfico de colunas
+    data: chartData,
+    options: chartOptions,
+    plugins: [ChartDataLabels]
+  });
+
+  // Inicializa o gráfico de pizza
+  const pieCtx = document.getElementById('pieChart').getContext('2d');
+  const pieChart = new Chart(pieCtx, {
+    type: 'pie', // Gráfico de pizza
+    data: chartData,
+    options: chartOptions,
+    plugins: [ChartDataLabels]
   });
 </script>
 
