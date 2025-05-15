@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 
 // Pegando dados do formulário
 $campos = [
-    'nome', 'nome_social', 'cpf', 'rg', 'data_nascimento', 'nacionalidade', 'deficiencia',
+    'nome', 'nome_social', 'cpf', 'rg', 'data_nascimento', 'pais', 'deficiencia',
     'nome_pai', 'nome_mae', 'responsavel', 'rg_responsavel', 'tipo_responsavel',
     'tel_responsavel', 'empresa_responsavel', 'tel_trabalho_responsavel', 'renda_responsavel',
     'email_responsavel', 'email_aluno', 'endereco', 'bairro', 'cidade', 'uf', 'cep',
@@ -28,7 +28,7 @@ foreach ($campos as $campo) {
 
 // Prepara a query
 $sql = "INSERT INTO alunos (
-    nome, nome_social, cpf, rg, data_nascimento, nacionalidade, deficiencia,
+    nome, nome_social, cpf, rg, data_nascimento, pais, deficiencia,
     nome_pai, nome_mae, responsavel, rg_responsavel, tipo_responsavel,
     tel_responsavel, trabalho_responsavel, tel_trabalho_responsavel, renda_responsavel,
     email_responsavel, email_aluno, endereco, bairro, cidade, uf, cep,
@@ -51,7 +51,7 @@ $stmt->bind_param(
     $dados['cpf'],
     $dados['rg'],
     $dados['data_nascimento'],
-    $dados['nacionalidade'],
+    $dados['pais'],
     $dados['deficiencia'],
     $dados['nome_pai'],
     $dados['nome_mae'],
