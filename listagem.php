@@ -5,7 +5,7 @@ include 'conexao.php';
 $cpf = '';
 $temGemeos = '';
 $genero = '';
-$nacionalidade = '';
+$pais = '';
 $dataNascimento = '';
 $sala = '';
 
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $cpf = isset($_POST['cpf']) ? trim($_POST['cpf']) : '';
     $temGemeos = isset($_POST['temGemeo']) ? $_POST['temGemeo'] : '';
     $genero = isset($_POST['genero']) ? $_POST['genero'] : '';
-    $nacionalidade = isset($_POST['nacionalidade']) ? trim($_POST['nacionalidade']) : '';
+    $pais = isset($_POST['pais']) ? trim($_POST['pais']) : '';
     $dataNascimento = isset($_POST['dataNascimento']) ? $_POST['dataNascimento'] : '';
     $sala = isset($_POST['sala']) ? trim($_POST['sala']) : '';
     // Monta query com base nos filtros
@@ -36,9 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $params[] = $genero;
         $types .= 's';
     }
-    if (!empty($nacionalidade)) {
-        $query .= " AND nacionalidade = ?";
-        $params[] = $nacionalidade;
+    if (!empty($pais)) {
+        $query .= " AND pais = ?";
+        $params[] = $pais;
         $types .= 's';
     }
     if (!empty($dataNascimento)) {
@@ -183,10 +183,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               <option value="outro">Outro</option>
             </select>
           </div>
-          <!-- Campo Nacionalidade -->
+          <!-- Campo pais -->
           <div class="mb-3">
-            <label for="nacionalidade" class="form-label">Nacionalidade</label>
-            <input type="text" class="form-control" name="nacionalidade" id="nacionalidade" placeholder="Digite a nacionalidade">
+            <label for="pais" class="form-label">pais</label>
+            <input type="text" class="form-control" name="pais" id="pais" placeholder="Digite a pais">
           </div>
 
           <!-- Campo Data de Nascimento -->

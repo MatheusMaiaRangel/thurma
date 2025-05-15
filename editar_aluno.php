@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dados = $_POST;
 
     $sql = "UPDATE alunos SET 
-        nome = ?, nome_social = ?, cpf = ?, rg = ?, data_nascimento = ?, nacionalidade = ?, deficiencia = ?,
+        nome = ?, nome_social = ?, cpf = ?, rg = ?, data_nascimento = ?, pais = ?, deficiencia = ?,
         nome_pai = ?, nome_mae = ?, responsavel = ?, rg_responsavel = ?, tipo_responsavel = ?, 
         tel_responsavel = ?, trabalho_responsavel = ?, tel_trabalho_responsavel = ?, renda_responsavel = ?, 
         email_responsavel = ?, email_aluno = ?, endereco = ?, bairro = ?, cidade = ?, uf = ?, cep = ?, 
@@ -119,20 +119,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="col-md-6">
-                <label class="form-label">Nacionalidade</label>
-                <select class="form-select" name="nacionalidade">
+                <label class="form-label">pais</label>
+                <select class="form-select" name="pais">
                     <option value="" disabled>Informe o nome do país</option>
-                    <option value="Brasil" <?= $alunos['nacionalidade'] === 'Brasil' ? 'selected' : '' ?>>Brasil</option>
-                    <option value="Argentina" <?= $alunos['nacionalidade'] === 'Argentina' ? 'selected' : '' ?>>Argentina</option>
-                    <option value="Estados Unidos" <?= $alunos['nacionalidade'] === 'Estados Unidos' ? 'selected' : '' ?>>Estados Unidos</option>
-                    <option value="Canadá" <?= $alunos['nacionalidade'] === 'Canadá' ? 'selected' : '' ?>>Canadá</option>
-                    <option value="Portugal" <?= $alunos['nacionalidade'] === 'Portugal' ? 'selected' : '' ?>>Portugal</option>
-                    <option value="Espanha" <?= $alunos['nacionalidade'] === 'Espanha' ? 'selected' : '' ?>>Espanha</option>
-                    <option value="França" <?= $alunos['nacionalidade'] === 'França' ? 'selected' : '' ?>>França</option>
-                    <option value="Alemanha" <?= $alunos['nacionalidade'] === 'Alemanha' ? 'selected' : '' ?>>Alemanha</option>
-                    <option value="Japão" <?= $alunos['nacionalidade'] === 'Japão' ? 'selected' : '' ?>>Japão</option>
-                    <option value="China" <?= $alunos['nacionalidade'] === 'China' ? 'selected' : '' ?>>China</option>
-                    <option value="Índia" <?= $alunos['nacionalidade'] === 'Índia' ? 'selected' : '' ?>>Índia</option>
+                    <option value="Brasil" <?= $alunos['pais'] === 'Brasil' ? 'selected' : '' ?>>Brasil</option>
+                    <option value="Argentina" <?= $alunos['pais'] === 'Argentina' ? 'selected' : '' ?>>Argentina</option>
+                    <option value="Estados Unidos" <?= $alunos['pais'] === 'Estados Unidos' ? 'selected' : '' ?>>Estados Unidos</option>
+                    <option value="Canadá" <?= $alunos['pais'] === 'Canadá' ? 'selected' : '' ?>>Canadá</option>
+                    <option value="Portugal" <?= $alunos['pais'] === 'Portugal' ? 'selected' : '' ?>>Portugal</option>
+                    <option value="Espanha" <?= $alunos['pais'] === 'Espanha' ? 'selected' : '' ?>>Espanha</option>
+                    <option value="França" <?= $alunos['pais'] === 'França' ? 'selected' : '' ?>>França</option>
+                    <option value="Alemanha" <?= $alunos['pais'] === 'Alemanha' ? 'selected' : '' ?>>Alemanha</option>
+                    <option value="Japão" <?= $alunos['pais'] === 'Japão' ? 'selected' : '' ?>>Japão</option>
+                    <option value="China" <?= $alunos['pais'] === 'China' ? 'selected' : '' ?>>China</option>
+                    <option value="Índia" <?= $alunos['pais'] === 'Índia' ? 'selected' : '' ?>>Índia</option>
                     <!-- Adicione mais países conforme necessário -->
                 </select>
             </div>
