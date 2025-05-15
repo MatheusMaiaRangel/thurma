@@ -4,7 +4,7 @@ include 'conexao.php';
 
 
 // Criando a conexão
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificando a conexão
 if ($conn->connect_error) {
