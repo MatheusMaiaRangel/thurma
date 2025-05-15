@@ -92,7 +92,7 @@ if ($stmt->execute()) {
                 text: 'Você cadastrou o aluno com sucesso.',
                 icon: 'success'
             }).then(function() {
-                window.location.href = 'listagem.php'; // Navega para a página de edição novamente
+                window.location.href = 'cadastro.html'; // Navega para a página de edição novamente
             });
         });
     </script>";
