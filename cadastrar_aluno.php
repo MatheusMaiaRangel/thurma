@@ -1,7 +1,10 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 // Conexão com o banco de dados
 include 'conexao.php';
 
+var_dump($_POST); // Adicione esta linha para ver o que está chegando do formulário
 
 // Criando a conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,7 +18,7 @@ if ($conn->connect_error) {
 $campos = [
     'nome', 'nome_social', 'cpf', 'rg', 'data_nascimento', 'pais', 'deficiencia',
     'nome_pai', 'nome_mae', 'responsavel', 'rg_responsavel', 'tipo_responsavel',
-    'tel_responsavel', 'empresa_responsavel', 'tel_trabalho_responsavel', 'renda_responsavel',
+    'tel_responsavel', 'trabalho_responsavel', 'tel_trabalho_responsavel', 'renda_responsavel',
     'email_responsavel', 'email_aluno', 'endereco', 'bairro', 'cidade', 'uf', 'cep',
     'complemento', 'telefone_fixo', 'cel_responsavel', 'cor', 'ra', 'registro_sus',
     'nis', 'tipo_sanguineo', 'medicamento', 'genero', 'tem_gemeos', 'quantos_gemeos'
