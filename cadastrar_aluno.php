@@ -4,7 +4,6 @@ error_reporting(E_ALL);
 // Conexão com o banco de dados
 include 'conexao.php';
 
-var_dump($_POST); // Adicione esta linha para ver o que está chegando do formulário
 
 // Criando a conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
