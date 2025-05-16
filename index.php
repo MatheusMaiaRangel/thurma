@@ -379,7 +379,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <!-- Removido o gráfico de colunas -->
     <!-- Gráfico de pizza -->
     <div>
-      <h5 class="text-center">Gráfico de Pizza</h5>
       <canvas id="pieChart" style="width: 400px; height: 400px;"></canvas>
     </div>
   </div>
