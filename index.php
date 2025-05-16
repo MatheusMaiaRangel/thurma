@@ -376,12 +376,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   <!-- Gráficos lado a lado -->
   <div class="d-flex justify-content-center align-items-start gap-5">
-    <!-- Gráfico de colunas -->
-    <div>
-      <h5 class="text-center">Gráfico de Colunas</h5>
-      <canvas id="barChart" style="width: 400px; height: 400px;"></canvas>
-    </div>
-
+    <!-- Removido o gráfico de colunas -->
     <!-- Gráfico de pizza -->
     <div>
       <h5 class="text-center">Gráfico de Pizza</h5>
@@ -396,12 +391,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <script>
   // Dados do gráfico
   const chartData = {
-    labels: ['Masculino', 'Feminino', 'Outro'], // Gêneros
-    datasets: [{
-      data: [<?= $stats['total_masculino'] ?? 0 ?>, <?= $stats['total_feminino'] ?? 0 ?>, <?= $stats['total_outro'] ?? 0 ?>],
-      backgroundColor: ['#4e73df', '#e74a3b', '#f6c23e'], // Cores correspondentes
-      borderWidth: 0
-    }]
+    labels: ['Masculino', 'Feminino', 'Outro'],
+    datasets: [
+      {
+        label: 'Alunos por gênero',
+        data: [
+          <?= $stats['total_masculino'] ?? 0 ?>,
+          <?= $stats['total_feminino'] ?? 0 ?>,
+          <?= $stats['total_outro'] ?? 0 ?>
+        ],
+        backgroundColor: ['#4e73df', '#e74a3b', '#f6c23e']
+      }
+    ]
   };
 
   // Configurações padrão do gráfico
@@ -409,15 +410,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     responsive: true,
     plugins: {
       legend: {
-        display: true, // Exibe a legenda
-        position: 'top', // Posição da legenda no topo
+        display: true,
+        position: 'top',
         labels: {
           font: {
             size: 16,
             family: 'Arial, sans-serif',
             weight: 'bold'
           },
-          color: '#333' // Cor do texto da legenda
+          color: '#333'
         }
       },
       datalabels: {
@@ -436,19 +437,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     hoverOffset: 15
   };
 
-  // Inicializa o gráfico de colunas
-  const barCtx = document.getElementById('barChart').getContext('2d');
-  const barChart = new Chart(barCtx, {
-    type: 'bar', // Gráfico de colunas
-    data: chartData,
-    options: chartOptions,
-    plugins: [ChartDataLabels]
-  });
-
-  // Inicializa o gráfico de pizza
+  // Inicializa apenas o gráfico de pizza
   const pieCtx = document.getElementById('pieChart').getContext('2d');
   const pieChart = new Chart(pieCtx, {
-    type: 'pie', // Gráfico de pizza
+    type: 'pie',
     data: chartData,
     options: chartOptions,
     plugins: [ChartDataLabels]
