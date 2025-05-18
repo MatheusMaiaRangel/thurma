@@ -30,9 +30,10 @@ No início, o foco era atender aos requisitos básicos da atividade: criar um si
 ## 🚀 Próximos passos
 
 - Implementar login/cadastro de escolas
+- Suporte a múltiplos idiomas
 - Adicionar um banner para esse README
-
-  
+- Deixar público em um servidor gratuito
+- Qualquer ideia que entre nesse tema (vai ser o site mais completo de todos)  
 
 <h2>👥 Créditos</h2>
 <table>
