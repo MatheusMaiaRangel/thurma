@@ -29,7 +29,7 @@ No início, o foco era atender aos requisitos básicos da atividade: criar um si
 
 ## 🚀 Próximos passos
 
-- Implementar autenticação de usuário (login)
+- Implementar login/cadastro de escolas
 - Adicionar um banner para esse README
 
   
