@@ -21,6 +21,19 @@ No início, o foco era atender aos requisitos básicos da atividade: criar um si
 - <img align="center" alt="PHP" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg">: Lógica de backend e conexão com banco de dados
 - <img align="center" alt="MySQL" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg">: Banco de dados
 
+## 📦 Bibliotecas e recursos externos
+
+- [Chart.js](https://www.chartjs.org/): Para criação do gráfico pizza
+- [SweetAlert2](https://sweetalert2.github.io/): Para exibir alertas personalizados
+- [IMask.js](https://imask.js.org/): Aplicação de máscaras em campos de formulários
+
+## 🚀 Próximos passos
+
+- Implementar autenticação de usuário (login)
+- Adicionar um banner para esse README
+
+  
+
 <h2>👥 Créditos</h2>
 <table>
   <tr>
