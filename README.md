@@ -17,6 +17,7 @@ No início, o foco era atender aos requisitos básicos da atividade: criar um si
 ## 🧰 Tecnologias utilizadas
 - <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">: Estrutura das páginas e marcação do conteúdo
 - <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">: Estilização e responsividade da interface
+- <img align="center" alt="JavaScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg">: Aplicação de máscaras em formulários, além da criação de alertas e do dashboard
 - <img align="center" alt="PHP" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg">: Lógica de backend e conexão com banco de dados
 - <img align="center" alt="MySQL" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg">: Banco de dados
 
