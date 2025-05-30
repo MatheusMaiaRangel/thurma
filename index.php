@@ -142,18 +142,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <label for="sala" class="form-label">Sala</label>
       <select class="form-select select-purple" id="sala" name="sala">
           <option value="">Selecione</option>
-          <option value="1º Ano Fundamental">1º Ano Fundamental</option>
-          <option value="2º Ano Fundamental">2º Ano Fundamental</option>
-          <option value="3º Ano Fundamental">3º Ano Fundamental</option>
-          <option value="4º Ano Fundamental">4º Ano Fundamental</option>
-          <option value="5º Ano Fundamental">5º Ano Fundamental</option>
-          <option value="6º Ano Fundamental">6º Ano Fundamental</option>
-          <option value="7º Ano Fundamental">7º Ano Fundamental</option>
-          <option value="8º Ano Fundamental">8º Ano Fundamental</option>
-          <option value="9º Ano Fundamental">9º Ano Fundamental</option>
-          <option value="1º Ano Médio">1º Ano Médio</option>
-          <option value="2º Ano Médio">2º Ano Médio</option>
-          <option value="3º Ano Médio">3º Ano Médio</option>
+          <option value="1º Ano Fundamental" <?= $sala === '1º Ano Fundamental' ? 'selected' : '' ?>>1º Ano Fundamental</option>
+          <option value="2º Ano Fundamental" <?= $sala === '2º Ano Fundamental' ? 'selected' : '' ?>>2º Ano Fundamental</option>
+          <option value="3º Ano Fundamental" <?= $sala === '3º Ano Fundamental' ? 'selected' : '' ?>>3º Ano Fundamental</option>
+          <option value="4º Ano Fundamental" <?= $sala === '4º Ano Fundamental' ? 'selected' : '' ?>>4º Ano Fundamental</option>
+          <option value="5º Ano Fundamental" <?= $sala === '5º Ano Fundamental' ? 'selected' : '' ?>>5º Ano Fundamental</option>
+          <option value="6º Ano Fundamental" <?= $sala === '6º Ano Fundamental' ? 'selected' : '' ?>>6º Ano Fundamental</option>
+          <option value="7º Ano Fundamental" <?= $sala === '7º Ano Fundamental' ? 'selected' : '' ?>>7º Ano Fundamental</option>
+          <option value="8º Ano Fundamental" <?= $sala === '8º Ano Fundamental' ? 'selected' : '' ?>>8º Ano Fundamental</option>
+          <option value="9º Ano Fundamental" <?= $sala === '9º Ano Fundamental' ? 'selected' : '' ?>>9º Ano Fundamental</option>
+          <option value="1º Ano Médio" <?= $sala === '1º Ano Médio' ? 'selected' : '' ?>>1º Ano Médio</option>
+          <option value="2º Ano Médio" <?= $sala === '2º Ano Médio' ? 'selected' : '' ?>>2º Ano Médio</option>
+          <option value="3º Ano Médio" <?= $sala === '3º Ano Médio' ? 'selected' : '' ?>>3º Ano Médio</option>
         </select>
     </div>
     <div class="col-md-3">
@@ -168,204 +168,204 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <label for="pais" class="form-label">País</label>
       <select class="form-select select-purple" id="pais" name="pais">
         <option value="">Selecione</option>
-        <option value="Afeganistão">Afeganistão</option>
-        <option value="África do Sul">África do Sul</option>
-        <option value="Albânia">Albânia</option>
-        <option value="Alemanha">Alemanha</option>
-        <option value="Andorra">Andorra</option>
-        <option value="Angola">Angola</option>
-        <option value="Antígua e Barbuda">Antígua e Barbuda</option>
-        <option value="Arábia Saudita">Arábia Saudita</option>
-        <option value="Argélia">Argélia</option>
-        <option value="Argentina">Argentina</option>
-        <option value="Armênia">Armênia</option>
-        <option value="Austrália">Austrália</option>
-        <option value="Áustria">Áustria</option>
-        <option value="Azerbaijão">Azerbaijão</option>
-        <option value="Bahamas">Bahamas</option>
-        <option value="Bahrein">Bahrein</option>
-        <option value="Bangladesh">Bangladesh</option>
-        <option value="Barbados">Barbados</option>
-        <option value="Bielorrússia">Bielorrússia</option>
-        <option value="Bélgica">Bélgica</option>
-        <option value="Belize">Belize</option>
-        <option value="Benin">Benin</option>
-        <option value="Bermudas">Bermudas</option>
-        <option value="Bielorrússia">Bielorrússia</option>
-        <option value="Bolívia">Bolívia</option>
-        <option value="Bósnia e Herzegovina">Bósnia e Herzegovina</option>
-        <option value="Botsuana">Botsuana</option>
-        <option value="Brasil">Brasil</option>
-        <option value="Brunei">Brunei</option>
-        <option value="Bulgária">Bulgária</option>
-        <option value="Burkina Faso">Burkina Faso</option>
-        <option value="Burundi">Burundi</option>
-        <option value="Cabo Verde">Cabo Verde</option>
-        <option value="Camarões">Camarões</option>
-        <option value="Camboja">Camboja</option>
-        <option value="Canadá">Canadá</option>
-        <option value="Catar">Catar</option>
-        <option value="Cazaquistão">Cazaquistão</option>
-        <option value="Chade">Chade</option>
-        <option value="Chile">Chile</option>
-        <option value="China">China</option>
-        <option value="Chipre">Chipre</option>
-        <option value="Colômbia">Colômbia</option>
-        <option value="Comores">Comores</option>
-        <option value="Congo">Congo</option>
-        <option value="Coreia do Norte">Coreia do Norte</option>
-        <option value="Coreia do Sul">Coreia do Sul</option>
-        <option value="Costa do Marfim">Costa do Marfim</option>
-        <option value="Costa Rica">Costa Rica</option>
-        <option value="Croácia">Croácia</option>
-        <option value="Cuba">Cuba</option>
-        <option value="Dinamarca">Dinamarca</option>
-        <option value="Djibuti">Djibuti</option>
-        <option value="Dominica">Dominica</option>
-        <option value="Egito">Egito</option>
-        <option value="El Salvador">El Salvador</option>
-        <option value="Emirados Árabes Unidos">Emirados Árabes Unidos</option>
-        <option value="Equador">Equador</option>
-        <option value="Espanha">Espanha</option>
-        <option value="Estados Unidos">Estados Unidos</option>
-        <option value="Estônia">Estônia</option>
-        <option value="Eswatini">Eswatini</option>
-        <option value="Etiópia">Etiópia</option>
-        <option value="Fiji">Fiji</option>
-        <option value="Filipinas">Filipinas</option>
-        <option value="Finlândia">Finlândia</option>
-        <option value="França">França</option>
-        <option value="Gabão">Gabão</option>
-        <option value="Gana">Gana</option>
-        <option value="Geórgia">Geórgia</option>
-        <option value="Gibraltar">Gibraltar</option>
-        <option value="Granada">Granada</option>
-        <option value="Grécia">Grécia</option>
-        <option value="Groenlândia">Groenlândia</option>
-        <option value="Guadalupe">Guadalupe</option>
-        <option value="Guatemala">Guatemala</option>
-        <option value="Guiana">Guiana</option>
-        <option value="Guiné">Guiné</option>
-        <option value="Guiné Equatorial">Guiné Equatorial</option>
-        <option value="Guiné-Bissau">Guiné-Bissau</option>
-        <option value="Haiti">Haiti</option>
-        <option value="Holanda">Holanda</option>
-        <option value="Honduras">Honduras</option>
-        <option value="Hong Kong">Hong Kong</option>
-        <option value="Hungria">Hungria</option>
-        <option value="Iémen">Iémen</option>
-        <option value="Ilhas Cayman">Ilhas Cayman</option>
-        <option value="Ilhas Cook">Ilhas Cook</option>
-        <option value="Ilhas Malvinas">Ilhas Malvinas</option>
-        <option value="Ilhas Marshall">Ilhas Marshall</option>
-        <option value="Ilhas Salomão">Ilhas Salomão</option>
-        <option value="Ilhas Virgens Americanas">Ilhas Virgens Americanas</option>
-        <option value="Ilhas Virgens Britânicas">Ilhas Virgens Britânicas</option>
-        <option value="Índia">Índia</option>
-        <option value="Indonésia">Indonésia</option>
-        <option value="Irã">Irã</option>
-        <option value="Iraque">Iraque</option>
-        <option value="Irlanda">Irlanda</option>
-        <option value="Islândia">Islândia</option>
-        <option value="Itália">Itália</option>
-        <option value="Jamaica">Jamaica</option>
-        <option value="Japão">Japão</option>
-        <option value="Jordânia">Jordânia</option>
-        <option value="Kiribati">Kiribati</option>
-        <option value="Kuwait">Kuwait</option>
-        <option value="Laos">Laos</option>
-        <option value="Lesoto">Lesoto</option>
-        <option value="Letônia">Letônia</option>
-        <option value="Líbano">Líbano</option>
-        <option value="Libéria">Libéria</option>
-        <option value="Líbia">Líbia</option>
-        <option value="Liechtenstein">Liechtenstein</option>
-        <option value="Lituânia">Lituânia</option>
-        <option value="Luxemburgo">Luxemburgo</option>
-        <option value="Macau">Macau</option>
-        <option value="Madagascar">Madagascar</option>
-        <option value="Malásia">Malásia</option>
-        <option value="Malawi">Malawi</option>
-        <option value="Maldivas">Maldivas</option>
-        <option value="Mali">Mali</option>
-        <option value="Malta">Malta</option>
-        <option value="Marrocos">Marrocos</option>
-        <option value="Maurício">Maurício</option>
-        <option value="Mauritânia">Mauritânia</option>
-        <option value="México">México</option>
-        <option value="Micronésia">Micronésia</option>
-        <option value="Moçambique">Moçambique</option>
-        <option value="Moldávia">Moldávia</option>
-        <option value="Mongólia">Mongólia</option>
-        <option value="Montenegro">Montenegro</option>
-        <option value="Namíbia">Namíbia</option>
-        <option value="Nepal">Nepal</option>
-        <option value="Nicarágua">Nicarágua</option>
-        <option value="Nigéria">Nigéria</option>
-        <option value="Noruega">Noruega</option>
-        <option value="Nova Caledônia">Nova Caledônia</option>
-        <option value="Nova Zelândia">Nova Zelândia</option>
-        <option value="Omã">Omã</option>
-        <option value="Países Baixos">Países Baixos</option>
-        <option value="Panamá">Panamá</option>
-        <option value="Papua Nova Guiné">Papua Nova Guiné</option>
-        <option value="Paquistão">Paquistão</option>
-        <option value="Paraguai">Paraguai</option>
-        <option value="Peru">Peru</option>
-        <option value="Polônia">Polônia</option>
-        <option value="Portugal">Portugal</option>
-        <option value="Quênia">Quênia</option>
-        <option value="Quirguistão">Quirguistão</option>
-        <option value="Reino Unido">Reino Unido</option>
-        <option value="República Centro-Africana">República Centro-Africana</option>
-        <option value="República Checa">República Checa</option>
-        <option value="República Democrática do Congo">República Democrática do Congo</option>
-        <option value="República Dominicana">República Dominicana</option>
-        <option value="Romênia">Romênia</option>
-        <option value="Ruanda">Ruanda</option>
-        <option value="Rússia">Rússia</option>
-        <option value="Saara Ocidental">Saara Ocidental</option>
-        <option value="Saint Kitts e Nevis">Saint Kitts e Nevis</option>
-        <option value="Saint Pierre e Miquelon">Saint Pierre e Miquelon</option>
-        <option value="Saint Vincent e Granadinas">Saint Vincent e Granadinas</option>
-        <option value="Samoa">Samoa</option>
-        <option value="San Marino">San Marino</option>
-        <option value="Santa Lúcia">Santa Lúcia</option>
-        <option value="Senegal">Senegal</option>
-        <option value="Serra Leoa">Serra Leoa</option>
-        <option value="Sérvia">Sérvia</option>
-        <option value="Singapura">Singapura</option>
-        <option value="Síria">Síria</option>
-        <option value="Somália">Somália</option>
-        <option value="Sri Lanka">Sri Lanka</option>
-        <option value="Suazilândia">Suazilândia</option>
-        <option value="Sudão">Sudão</option>
-        <option value="Sudão do Sul">Sudão do Sul</option>
-        <option value="Suécia">Suécia</option>
-        <option value="Suíça">Suíça</option>
-        <option value="Suriname">Suriname</option>
-        <option value="Tailândia">Tailândia</option>
-        <option value="Taiwan">Taiwan</option>
-        <option value="Tajiquistão">Tajiquistão</option>
-        <option value="Tanzânia">Tanzânia</option>
-        <option value="Timor-Leste">Timor-Leste</option>
-        <option value="Togo">Togo</option>
-        <option value="Tonga">Tonga</option>
-        <option value="Trinidad e Tobago">Trinidad e Tobago</option>
-        <option value="Tunísia">Tunísia</option>
-        <option value="Turcomenistão">Turcomenistão</option>
-        <option value="Turquia">Turquia</option>
-        <option value="Tuvalu">Tuvalu</option>
-        <option value="Ucrânia">Ucrânia</option>
-        <option value="Uganda">Uganda</option>
-        <option value="Uruguai">Uruguai</option>
-        <option value="Uzbequistão">Uzbequistão</option>
-        <option value="Vanuatu">Vanuatu</option>
-        <option value="Vaticano">Vaticano</option>
-        <option value="Venezuela">Venezuela</option>
-        <option value="Viêt Nam">Viêt Nam</option>
-        <option value="Zâmbia">Zâmbia</option>
-        <option value="Zimbábue">Zimbábue</option>
+        <option value="Afeganistão" <?= $pais === 'Afeganistão' ? 'selected' : '' ?>>Afeganistão</option>
+        <option value="África do Sul" <?= $pais === 'África do Sul' ? 'selected' : '' ?>>África do Sul</option>
+        <option value="Albânia" <?= $pais === 'Albânia' ? 'selected' : '' ?>>Albânia</option>
+        <option value="Alemanha" <?= $pais === 'Alemanha' ? 'selected' : '' ?>>Alemanha</option>
+        <option value="Andorra" <?= $pais === 'Andorra' ? 'selected' : '' ?>>Andorra</option>
+        <option value="Angola" <?= $pais === 'Angola' ? 'selected' : '' ?>>Angola</option>
+        <option value="Antígua e Barbuda" <?= $pais === 'Antígua e Barbuda' ? 'selected' : '' ?>>Antígua e Barbuda</option>
+        <option value="Arábia Saudita" <?= $pais === 'Arábia Saudita' ? 'selected' : '' ?>>Arábia Saudita</option>
+        <option value="Argélia" <?= $pais === 'Argélia' ? 'selected' : '' ?>>Argélia</option>
+        <option value="Argentina" <?= $pais === 'Argentina' ? 'selected' : '' ?>>Argentina</option>
+        <option value="Armênia" <?= $pais === 'Armênia' ? 'selected' : '' ?>>Armênia</option>
+        <option value="Austrália" <?= $pais === 'Austrália' ? 'selected' : '' ?>>Austrália</option>
+        <option value="Áustria" <?= $pais === 'Áustria' ? 'selected' : '' ?>>Áustria</option>
+        <option value="Azerbaijão" <?= $pais === 'Azerbaijão' ? 'selected' : '' ?>>Azerbaijão</option>
+        <option value="Bahamas" <?= $pais === 'Bahamas' ? 'selected' : '' ?>>Bahamas</option>
+        <option value="Bahrein" <?= $pais === 'Bahrein' ? 'selected' : '' ?>>Bahrein</option>
+        <option value="Bangladesh" <?= $pais === 'Bangladesh' ? 'selected' : '' ?>>Bangladesh</option>
+        <option value="Barbados" <?= $pais === 'Barbados' ? 'selected' : '' ?>>Barbados</option>
+        <option value="Bielorrússia" <?= $pais === 'Bielorrússia' ? 'selected' : '' ?>>Bielorrússia</option>
+        <option value="Bélgica" <?= $pais === 'Bélgica' ? 'selected' : '' ?>>Bélgica</option>
+        <option value="Belize" <?= $pais === 'Belize' ? 'selected' : '' ?>>Belize</option>
+        <option value="Benin" <?= $pais === 'Benin' ? 'selected' : '' ?>>Benin</option>
+        <option value="Bermudas" <?= $pais === 'Bermudas' ? 'selected' : '' ?>>Bermudas</option>
+        <option value="Bielorrússia" <?= $pais === 'Bielorrússia' ? 'selected' : '' ?>>Bielorrússia</option>
+        <option value="Bolívia" <?= $pais === 'Bolívia' ? 'selected' : '' ?>>Bolívia</option>
+        <option value="Bósnia e Herzegovina" <?= $pais === 'Bósnia e Herzegovina' ? 'selected' : '' ?>>Bósnia e Herzegovina</option>
+        <option value="Botsuana" <?= $pais === 'Botsuana' ? 'selected' : '' ?>>Botsuana</option>
+        <option value="Brasil" <?= $pais === 'Brasil' ? 'selected' : '' ?>>Brasil</option>
+        <option value="Brunei" <?= $pais === 'Brunei' ? 'selected' : '' ?>>Brunei</option>
+        <option value="Bulgária" <?= $pais === 'Bulgária' ? 'selected' : '' ?>>Bulgária</option>
+        <option value="Burkina Faso" <?= $pais === 'Burkina Faso' ? 'selected' : '' ?>>Burkina Faso</option>
+        <option value="Burundi" <?= $pais === 'Burundi' ? 'selected' : '' ?>>Burundi</option>
+        <option value="Cabo Verde" <?= $pais === 'Cabo Verde' ? 'selected' : '' ?>>Cabo Verde</option>
+        <option value="Camarões" <?= $pais === 'Camarões' ? 'selected' : '' ?>>Camarões</option>
+        <option value="Camboja" <?= $pais === 'Camboja' ? 'selected' : '' ?>>Camboja</option>
+        <option value="Canadá" <?= $pais === 'Canadá' ? 'selected' : '' ?>>Canadá</option>
+        <option value="Catar" <?= $pais === 'Catar' ? 'selected' : '' ?>>Catar</option>
+        <option value="Cazaquistão" <?= $pais === 'Cazaquistão' ? 'selected' : '' ?>>Cazaquistão</option>
+        <option value="Chade" <?= $pais === 'Chade' ? 'selected' : '' ?>>Chade</option>
+        <option value="Chile" <?= $pais === 'Chile' ? 'selected' : '' ?>>Chile</option>
+        <option value="China" <?= $pais === 'China' ? 'selected' : '' ?>>China</option>
+        <option value="Chipre" <?= $pais === 'Chipre' ? 'selected' : '' ?>>Chipre</option>
+        <option value="Colômbia" <?= $pais === 'Colômbia' ? 'selected' : '' ?>>Colômbia</option>
+        <option value="Comores" <?= $pais === 'Comores' ? 'selected' : '' ?>>Comores</option>
+        <option value="Congo" <?= $pais === 'Congo' ? 'selected' : '' ?>>Congo</option>
+        <option value="Coreia do Norte" <?= $pais === 'Coreia do Norte' ? 'selected' : '' ?>>Coreia do Norte</option>
+        <option value="Coreia do Sul" <?= $pais === 'Coreia do Sul' ? 'selected' : '' ?>>Coreia do Sul</option>
+        <option value="Costa do Marfim" <?= $pais === 'Costa do Marfim' ? 'selected' : '' ?>>Costa do Marfim</option>
+        <option value="Costa Rica" <?= $pais === 'Costa Rica' ? 'selected' : '' ?>>Costa Rica</option>
+        <option value="Croácia" <?= $pais === 'Croácia' ? 'selected' : '' ?>>Croácia</option>
+        <option value="Cuba" <?= $pais === 'Cuba' ? 'selected' : '' ?>>Cuba</option>
+        <option value="Dinamarca" <?= $pais === 'Dinamarca' ? 'selected' : '' ?>>Dinamarca</option>
+        <option value="Djibuti" <?= $pais === 'Djibuti' ? 'selected' : '' ?>>Djibuti</option>
+        <option value="Dominica" <?= $pais === 'Dominica' ? 'selected' : '' ?>>Dominica</option>
+        <option value="Egito" <?= $pais === 'Egito' ? 'selected' : '' ?>>Egito</option>
+        <option value="El Salvador" <?= $pais === 'El Salvador' ? 'selected' : '' ?>>El Salvador</option>
+        <option value="Emirados Árabes Unidos" <?= $pais === 'Emirados Árabes Unidos' ? 'selected' : '' ?>>Emirados Árabes Unidos</option>
+        <option value="Equador" <?= $pais === 'Equador' ? 'selected' : '' ?>>Equador</option>
+        <option value="Espanha" <?= $pais === 'Espanha' ? 'selected' : '' ?>>Espanha</option>
+        <option value="Estados Unidos" <?= $pais === 'Estados Unidos' ? 'selected' : '' ?>>Estados Unidos</option>
+        <option value="Estônia" <?= $pais === 'Estônia' ? 'selected' : '' ?>>Estônia</option>
+        <option value="Eswatini" <?= $pais === 'Eswatini' ? 'selected' : '' ?>>Eswatini</option>
+        <option value="Etiópia" <?= $pais === 'Etiópia' ? 'selected' : '' ?>>Etiópia</option>
+        <option value="Fiji" <?= $pais === 'Fiji' ? 'selected' : '' ?>>Fiji</option>
+        <option value="Filipinas" <?= $pais === 'Filipinas' ? 'selected' : '' ?>>Filipinas</option>
+        <option value="Finlândia" <?= $pais === 'Finlândia' ? 'selected' : '' ?>>Finlândia</option>
+        <option value="França" <?= $pais === 'França' ? 'selected' : '' ?>>França</option>
+        <option value="Gabão" <?= $pais === 'Gabão' ? 'selected' : '' ?>>Gabão</option>
+        <option value="Gana" <?= $pais === 'Gana' ? 'selected' : '' ?>>Gana</option>
+        <option value="Geórgia" <?= $pais === 'Geórgia' ? 'selected' : '' ?>>Geórgia</option>
+        <option value="Gibraltar" <?= $pais === 'Gibraltar' ? 'selected' : '' ?>>Gibraltar</option>
+        <option value="Granada" <?= $pais === 'Granada' ? 'selected' : '' ?>>Granada</option>
+        <option value="Grécia" <?= $pais === 'Grécia' ? 'selected' : '' ?>>Grécia</option>
+        <option value="Groenlândia" <?= $pais === 'Groenlândia' ? 'selected' : '' ?>>Groenlândia</option>
+        <option value="Guadalupe" <?= $pais === 'Guadalupe' ? 'selected' : '' ?>>Guadalupe</option>
+        <option value="Guatemala" <?= $pais === 'Guatemala' ? 'selected' : '' ?>>Guatemala</option>
+        <option value="Guiana" <?= $pais === 'Guiana' ? 'selected' : '' ?>>Guiana</option>
+        <option value="Guiné" <?= $pais === 'Guiné' ? 'selected' : '' ?>>Guiné</option>
+        <option value="Guiné Equatorial" <?= $pais === 'Guiné Equatorial' ? 'selected' : '' ?>>Guiné Equatorial</option>
+        <option value="Guiné-Bissau" <?= $pais === 'Guiné-Bissau' ? 'selected' : '' ?>>Guiné-Bissau</option>
+        <option value="Haiti" <?= $pais === 'Haiti' ? 'selected' : '' ?>>Haiti</option>
+        <option value="Holanda" <?= $pais === 'Holanda' ? 'selected' : '' ?>>Holanda</option>
+        <option value="Honduras" <?= $pais === 'Honduras' ? 'selected' : '' ?>>Honduras</option>
+        <option value="Hong Kong" <?= $pais === 'Hong Kong' ? 'selected' : '' ?>>Hong Kong</option>
+        <option value="Hungria" <?= $pais === 'Hungria' ? 'selected' : '' ?>>Hungria</option>
+        <option value="Iémen" <?= $pais === 'Iémen' ? 'selected' : '' ?>>Iémen</option>
+        <option value="Ilhas Cayman" <?= $pais === 'Ilhas Cayman' ? 'selected' : '' ?>>Ilhas Cayman</option>
+        <option value="Ilhas Cook" <?= $pais === 'Ilhas Cook' ? 'selected' : '' ?>>Ilhas Cook</option>
+        <option value="Ilhas Malvinas" <?= $pais === 'Ilhas Malvinas' ? 'selected' : '' ?>>Ilhas Malvinas</option>
+        <option value="Ilhas Marshall" <?= $pais === 'Ilhas Marshall' ? 'selected' : '' ?>>Ilhas Marshall</option>
+        <option value="Ilhas Salomão" <?= $pais === 'Ilhas Salomão' ? 'selected' : '' ?>>Ilhas Salomão</option>
+        <option value="Ilhas Virgens Americanas" <?= $pais === 'Ilhas Virgens Americanas' ? 'selected' : '' ?>>Ilhas Virgens Americanas</option>
+        <option value="Ilhas Virgens Britânicas" <?= $pais === 'Ilhas Virgens Britânicas' ? 'selected' : '' ?>>Ilhas Virgens Britânicas</option>
+        <option value="Índia" <?= $pais === 'Índia' ? 'selected' : '' ?>>Índia</option>
+        <option value="Indonésia" <?= $pais === 'Indonésia' ? 'selected' : '' ?>>Indonésia</option>
+        <option value="Irã" <?= $pais === 'Irã' ? 'selected' : '' ?>>Irã</option>
+        <option value="Iraque" <?= $pais === 'Iraque' ? 'selected' : '' ?>>Iraque</option>
+        <option value="Irlanda" <?= $pais === 'Irlanda' ? 'selected' : '' ?>>Irlanda</option>
+        <option value="Islândia" <?= $pais === 'Islândia' ? 'selected' : '' ?>>Islândia</option>
+        <option value="Itália" <?= $pais === 'Itália' ? 'selected' : '' ?>>Itália</option>
+        <option value="Jamaica" <?= $pais === 'Jamaica' ? 'selected' : '' ?>>Jamaica</option>
+        <option value="Japão" <?= $pais === 'Japão' ? 'selected' : '' ?>>Japão</option>
+        <option value="Jordânia" <?= $pais === 'Jordânia' ? 'selected' : '' ?>>Jordânia</option>
+        <option value="Kiribati" <?= $pais === 'Kiribati' ? 'selected' : '' ?>>Kiribati</option>
+        <option value="Kuwait" <?= $pais === 'Kuwait' ? 'selected' : '' ?>>Kuwait</option>
+        <option value="Laos" <?= $pais === 'Laos' ? 'selected' : '' ?>>Laos</option>
+        <option value="Lesoto" <?= $pais === 'Lesoto' ? 'selected' : '' ?>>Lesoto</option>
+        <option value="Letônia" <?= $pais === 'Letônia' ? 'selected' : '' ?>>Letônia</option>
+        <option value="Líbano" <?= $pais === 'Líbano' ? 'selected' : '' ?>>Líbano</option>
+        <option value="Libéria" <?= $pais === 'Libéria' ? 'selected' : '' ?>>Libéria</option>
+        <option value="Líbia" <?= $pais === 'Líbia' ? 'selected' : '' ?>>Líbia</option>
+        <option value="Liechtenstein" <?= $pais === 'Liechtenstein' ? 'selected' : '' ?>>Liechtenstein</option>
+        <option value="Lituânia" <?= $pais === 'Lituânia' ? 'selected' : '' ?>>Lituânia</option>
+        <option value="Luxemburgo" <?= $pais === 'Luxemburgo' ? 'selected' : '' ?>>Luxemburgo</option>
+        <option value="Macau" <?= $pais === 'Macau' ? 'selected' : '' ?>>Macau</option>
+        <option value="Madagascar" <?= $pais === 'Madagascar' ? 'selected' : '' ?>>Madagascar</option>
+        <option value="Malásia" <?= $pais === 'Malásia' ? 'selected' : '' ?>>Malásia</option>
+        <option value="Malawi" <?= $pais === 'Malawi' ? 'selected' : '' ?>>Malawi</option>
+        <option value="Maldivas" <?= $pais === 'Maldivas' ? 'selected' : '' ?>>Maldivas</option>
+        <option value="Mali" <?= $pais === 'Mali' ? 'selected' : '' ?>>Mali</option>
+        <option value="Malta" <?= $pais === 'Malta' ? 'selected' : '' ?>>Malta</option>
+        <option value="Marrocos" <?= $pais === 'Marrocos' ? 'selected' : '' ?>>Marrocos</option>
+        <option value="Maurício" <?= $pais === 'Maurício' ? 'selected' : '' ?>>Maurício</option>
+        <option value="Mauritânia" <?= $pais === 'Mauritânia' ? 'selected' : '' ?>>Mauritânia</option>
+        <option value="México" <?= $pais === 'México' ? 'selected' : '' ?>>México</option>
+        <option value="Micronésia" <?= $pais === 'Micronésia' ? 'selected' : '' ?>>Micronésia</option>
+        <option value="Moçambique" <?= $pais === 'Moçambique' ? 'selected' : '' ?>>Moçambique</option>
+        <option value="Moldávia" <?= $pais === 'Moldávia' ? 'selected' : '' ?>>Moldávia</option>
+        <option value="Mongólia" <?= $pais === 'Mongólia' ? 'selected' : '' ?>>Mongólia</option>
+        <option value="Montenegro" <?= $pais === 'Montenegro' ? 'selected' : '' ?>>Montenegro</option>
+        <option value="Namíbia" <?= $pais === 'Namíbia' ? 'selected' : '' ?>>Namíbia</option>
+        <option value="Nepal" <?= $pais === 'Nepal' ? 'selected' : '' ?>>Nepal</option>
+        <option value="Nicarágua" <?= $pais === 'Nicarágua' ? 'selected' : '' ?>>Nicarágua</option>
+        <option value="Nigéria" <?= $pais === 'Nigéria' ? 'selected' : '' ?>>Nigéria</option>
+        <option value="Noruega" <?= $pais === 'Noruega' ? 'selected' : '' ?>>Noruega</option>
+        <option value="Nova Caledônia" <?= $pais === 'Nova Caledônia' ? 'selected' : '' ?>>Nova Caledônia</option>
+        <option value="Nova Zelândia" <?= $pais === 'Nova Zelândia' ? 'selected' : '' ?>>Nova Zelândia</option>
+        <option value="Omã" <?= $pais === 'Omã' ? 'selected' : '' ?>>Omã</option>
+        <option value="Países Baixos" <?= $pais === 'Países Baixos' ? 'selected' : '' ?>>Países Baixos</option>
+        <option value="Panamá" <?= $pais === 'Panamá' ? 'selected' : '' ?>>Panamá</option>
+        <option value="Papua Nova Guiné" <?= $pais === 'Papua Nova Guiné' ? 'selected' : '' ?>>Papua Nova Guiné</option>
+        <option value="Paquistão" <?= $pais === 'Paquistão' ? 'selected' : '' ?>>Paquistão</option>
+        <option value="Paraguai" <?= $pais === 'Paraguai' ? 'selected' : '' ?>>Paraguai</option>
+        <option value="Peru" <?= $pais === 'Peru' ? 'selected' : '' ?>>Peru</option>
+        <option value="Polônia" <?= $pais === 'Polônia' ? 'selected' : '' ?>>Polônia</option>
+        <option value="Portugal" <?= $pais === 'Portugal' ? 'selected' : '' ?>>Portugal</option>
+        <option value="Quênia" <?= $pais === 'Quênia' ? 'selected' : '' ?>>Quênia</option>
+        <option value="Quirguistão" <?= $pais === 'Quirguistão' ? 'selected' : '' ?>>Quirguistão</option>
+        <option value="Reino Unido" <?= $pais === 'Reino Unido' ? 'selected' : '' ?>>Reino Unido</option>
+        <option value="República Centro-Africana" <?= $pais === 'República Centro-Africana' ? 'selected' : '' ?>>República Centro-Africana</option>
+        <option value="República Checa" <?= $pais === 'República Checa' ? 'selected' : '' ?>>República Checa</option>
+        <option value="República Democrática do Congo" <?= $pais === 'República Democrática do Congo' ? 'selected' : '' ?>>República Democrática do Congo</option>
+        <option value="República Dominicana" <?= $pais === 'República Dominicana' ? 'selected' : '' ?>>República Dominicana</option>
+        <option value="Romênia" <?= $pais === 'Romênia' ? 'selected' : '' ?>>Romênia</option>
+        <option value="Ruanda" <?= $pais === 'Ruanda' ? 'selected' : '' ?>>Ruanda</option>
+        <option value="Rússia" <?= $pais === 'Rússia' ? 'selected' : '' ?>>Rússia</option>
+        <option value="Saara Ocidental" <?= $pais === 'Saara Ocidental' ? 'selected' : '' ?>>Saara Ocidental</option>
+        <option value="Saint Kitts e Nevis" <?= $pais === 'Saint Kitts e Nevis' ? 'selected' : '' ?>>Saint Kitts e Nevis</option>
+        <option value="Saint Pierre e Miquelon" <?= $pais === 'Saint Pierre e Miquelon' ? 'selected' : '' ?>>Saint Pierre e Miquelon</option>
+        <option value="Saint Vincent e Granadinas" <?= $pais === 'Saint Vincent e Granadinas' ? 'selected' : '' ?>>Saint Vincent e Granadinas</option>
+        <option value="Samoa" <?= $pais === 'Samoa' ? 'selected' : '' ?>>Samoa</option>
+        <option value="San Marino" <?= $pais === 'San Marino' ? 'selected' : '' ?>>San Marino</option>
+        <option value="Santa Lúcia" <?= $pais === 'Santa Lúcia' ? 'selected' : '' ?>>Santa Lúcia</option>
+        <option value="Senegal" <?= $pais === 'Senegal' ? 'selected' : '' ?>>Senegal</option>
+        <option value="Serra Leoa" <?= $pais === 'Serra Leoa' ? 'selected' : '' ?>>Serra Leoa</option>
+        <option value="Sérvia" <?= $pais === 'Sérvia' ? 'selected' : '' ?>>Sérvia</option>
+        <option value="Singapura" <?= $pais === 'Singapura' ? 'selected' : '' ?>>Singapura</option>
+        <option value="Síria" <?= $pais === 'Síria' ? 'selected' : '' ?>>Síria</option>
+        <option value="Somália" <?= $pais === 'Somália' ? 'selected' : '' ?>>Somália</option>
+        <option value="Sri Lanka" <?= $pais === 'Sri Lanka' ? 'selected' : '' ?>>Sri Lanka</option>
+        <option value="Suazilândia" <?= $pais === 'Suazilândia' ? 'selected' : '' ?>>Suazilândia</option>
+        <option value="Sudão" <?= $pais === 'Sudão' ? 'selected' : '' ?>>Sudão</option>
+        <option value="Sudão do Sul" <?= $pais === 'Sudão do Sul' ? 'selected' : '' ?>>Sudão do Sul</option>
+        <option value="Suécia" <?= $pais === 'Suécia' ? 'selected' : '' ?>>Suécia</option>
+        <option value="Suíça" <?= $pais === 'Suíça' ? 'selected' : '' ?>>Suíça</option>
+        <option value="Suriname" <?= $pais === 'Suriname' ? 'selected' : '' ?>>Suriname</option>
+        <option value="Tailândia" <?= $pais === 'Tailândia' ? 'selected' : '' ?>>Tailândia</option>
+        <option value="Taiwan" <?= $pais === 'Taiwan' ? 'selected' : '' ?>>Taiwan</option>
+        <option value="Tajiquistão" <?= $pais === 'Tajiquistão' ? 'selected' : '' ?>>Tajiquistão</option>
+        <option value="Tanzânia" <?= $pais === 'Tanzânia' ? 'selected' : '' ?>>Tanzânia</option>
+        <option value="Timor-Leste" <?= $pais === 'Timor-Leste' ? 'selected' : '' ?>>Timor-Leste</option>
+        <option value="Togo" <?= $pais === 'Togo' ? 'selected' : '' ?>>Togo</option>
+        <option value="Tonga" <?= $pais === 'Tonga' ? 'selected' : '' ?>>Tonga</option>
+        <option value="Trinidad e Tobago" <?= $pais === 'Trinidad e Tobago' ? 'selected' : '' ?>>Trinidad e Tobago</option>
+        <option value="Tunísia" <?= $pais === 'Tunísia' ? 'selected' : '' ?>>Tunísia</option>
+        <option value="Turcomenistão" <?= $pais === 'Turcomenistão' ? 'selected' : '' ?>>Turcomenistão</option>
+        <option value="Turquia" <?= $pais === 'Turquia' ? 'selected' : '' ?>>Turquia</option>
+        <option value="Tuvalu" <?= $pais === 'Tuvalu' ? 'selected' : '' ?>>Tuvalu</option>
+        <option value="Ucrânia" <?= $pais === 'Ucrânia' ? 'selected' : '' ?>>Ucrânia</option>
+        <option value="Uganda" <?= $pais === 'Uganda' ? 'selected' : '' ?>>Uganda</option>
+        <option value="Uruguai" <?= $pais === 'Uruguai' ? 'selected' : '' ?>>Uruguai</option>
+        <option value="Uzbequistão" <?= $pais === 'Uzbequistão' ? 'selected' : '' ?>>Uzbequistão</option>
+        <option value="Vanuatu" <?= $pais === 'Vanuatu' ? 'selected' : '' ?>>Vanuatu</option>
+        <option value="Vaticano" <?= $pais === 'Vaticano' ? 'selected' : '' ?>>Vaticano</option>
+        <option value="Venezuela" <?= $pais === 'Venezuela' ? 'selected' : '' ?>>Venezuela</option>
+        <option value="Viêt Nam" <?= $pais === 'Viêt Nam' ? 'selected' : '' ?>>Viêt Nam</option>
+        <option value="Zâmbia" <?= $pais === 'Zâmbia' ? 'selected' : '' ?>>Zâmbia</option>
+        <option value="Zimbábue" <?= $pais === 'Zimbábue' ? 'selected' : '' ?>>Zimbábue</option>
       </select>
     </div>
 
