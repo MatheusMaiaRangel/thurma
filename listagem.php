@@ -102,7 +102,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <form method="POST" class="d-flex mb-4 col-md-6 mx-auto" role="search" onsubmit="return false;">
       <input class="form-control me-2 border border-primary fw-bold" type="text" name="cpf" id="cpf"
              placeholder="Pesquisar por CPF" value="<?= htmlspecialchars($cpf) ?>">
-      <input type="image" src="img/search.png" alt="Buscar">
   </form>
 
   <div class="table-responsive">
