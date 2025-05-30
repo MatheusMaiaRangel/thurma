@@ -109,10 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <DIV> 
     <div class="text-end mb-3"> 
       <a href="cadastro.html"><img src="img/user.png"></a>
-       <button type="button" data-bs-toggle="modal" data-bs-target="#filterModal">
-      <img src="img/filter.png">
-      </button>
+      <img src="img/filter.png" style="cursor:pointer; width:30px; height:auto;" data-bs-toggle="modal" data-bs-target="#filterModal" alt="Filtros Avançados">
     </div>
+  
 
     </DIV>
     
