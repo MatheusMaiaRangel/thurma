@@ -99,10 +99,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <h2 class="text-center text-purple mb-4">Lista de Alunos</h2>
 
   <!-- Formulário de pesquisa -->
-  <form method="POST" class="d-flex mb-4 col-md-6 mx-auto" role="search">
+  <form method="POST" class="d-flex mb-4 col-md-6 mx-auto" role="search" onsubmit="return false;">
       <input class="form-control me-2 border border-primary fw-bold" type="text" name="cpf" id="cpf"
-             placeholder="Pesquisar por CPF" value="<?= htmlspecialchars($cpf) ?>" required>
-             <input type="image" src="img/search.png" alt="Buscar">
+             placeholder="Pesquisar por CPF" value="<?= htmlspecialchars($cpf) ?>">
+      <input type="image" src="img/search.png" alt="Buscar">
   </form>
 
   <div class="table-responsive">
@@ -111,10 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <a href="cadastro.html"><img src="img/user.png"></a>
       <img src="img/filter.png" style="cursor:pointer; width:30px; height:auto;" data-bs-toggle="modal" data-bs-target="#filterModal" alt="Filtros Avançados">
     </div>
-  
-
     </DIV>
-    
     <table class="table table-bordered table-hover align-middle">
       <thead class="table-dark text-center">
         <tr>
@@ -126,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <th>Ações</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="alunos-tbody">
         <?php if ($result->num_rows > 0): ?>
             <?php while ($row = $result->fetch_assoc()): ?>
             <tr>
@@ -136,16 +133,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               <td><?= htmlspecialchars($row['ra']) ?></td>
               <td><?= htmlspecialchars($row['sala']) ?></td>
               <td class="text-center">
-  <a href="editar_aluno.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning me-2">Editar</a>
-  <a href="javascript:void(0);" class="btn btn-sm btn-danger" 
-     onclick="confirmDelete(<?= $row['id'] ?>)">Excluir</a>
-</td>
-
+                <a href="editar_aluno.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning me-2">Editar</a>
+                <a href="javascript:void(0);" class="btn btn-sm btn-danger" 
+                   onclick="confirmDelete(<?= $row['id'] ?>)">Excluir</a>
+              </td>
             </tr>
             <?php endwhile; ?>
         <?php else: ?>
             <tr>
-              <td colspan="5" class="text-center text-muted">Nenhum aluno encontrado.</td>
+              <td colspan="6" class="text-center text-muted">Nenhum aluno encontrado.</td>
             </tr>
         <?php endif; ?>
       </tbody>
@@ -226,6 +222,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   const cpfInput = document.getElementById('cpf');
   IMask(cpfInput, {
     mask: '000.000.000-00'
+  });
+
+  // AJAX para pesquisa ao vivo
+  cpfInput.addEventListener('input', function() {
+    const cpfValue = cpfInput.value;
+    fetch('ajax_listagem.php?cpf=' + encodeURIComponent(cpfValue))
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.getElementById('alunos-tbody');
+        tbody.innerHTML = '';
+        if (data.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted">Nenhum aluno encontrado.</td></tr>';
+        } else {
+          data.forEach(function(row) {
+            tbody.innerHTML += `<tr>
+              <td class="text-center">${row.id}</td>
+              <td>${row.nome}</td>
+              <td>${row.cpf}</td>
+              <td>${row.ra}</td>
+              <td>${row.sala}</td>
+              <td class="text-center">
+                <a href="editar_aluno.php?id=${row.id}" class="btn btn-sm btn-warning me-2">Editar</a>
+                <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="confirmDelete(${row.id})">Excluir</a>
+              </td>
+            </tr>`;
+          });
+        }
+      });
   });
 </script>
 
