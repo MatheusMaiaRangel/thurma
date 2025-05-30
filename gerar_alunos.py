@@ -77,7 +77,7 @@ def gerar_aluno(id, sala):
     telefone_fixo = fake_br.phone_number()
     cel_responsavel = fake_br.phone_number()
     cor = random.choice(['Branca', 'Parda', 'Preta', 'Amarela', 'Indígena'])
-    ra = str(fake_br.random_number(digits=8, fix_len=True))
+    ra = str(fake_br.random_number(digits=5, fix_len=True))
     registro_sus = str(fake_br.random_number(digits=15, fix_len=True))
     nis = str(fake_br.random_number(digits=11, fix_len=True))
     tipo_sanguineo = random.choice(['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'])
