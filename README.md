@@ -44,4 +44,10 @@ No início, o foco era atender aos requisitos básicos da atividade: criar um si
         <sub><b>Maia</b></sub>
       </a>
     </td>
+     <td align="center">
+      <a href="https://github.com/RafaelFavetta">
+        <img src="https://avatars.githubusercontent.com/u/179479196?v=4" width="100px" alt="Foto do Rafa"/><br>
+        <sub><b>Rafael</b></sub>
+      </a>
+    </td>
   </tr>
