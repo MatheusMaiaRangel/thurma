@@ -181,7 +181,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <!-- Campo pais -->
           <div class="mb-3">
             <label for="pais" class="form-label">País</label>
-            <div class="col-md-6 p-0">
               <select class="form-select" name="pais" required>
                 <option value="Brasil">Brasil</option>
                 <option value="Afeganistão">Afeganistão</option>
@@ -382,7 +381,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <option value="Zâmbia">Zâmbia</option>
                 <option value="Zimbábue">Zimbábue</option>
               </select>
-            </div>
           </div>
 
           <!-- Campo Data de Nascimento -->
