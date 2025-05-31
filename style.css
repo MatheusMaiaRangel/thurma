@@ -107,9 +107,9 @@ body {
     }
 
     .card-aluno {
-      border: 2px solid #1cc88a; /* Borda verde */
+      border: 2px solid #f6c23e; /* Borda verde */
       border-radius: 8px; /* Bordas arredondadas */
-      background:#1cc88a;
+      background:#f6c23e;
       color: white;
       box-shadow: 0 4px 12px rgba(111, 66, 193, 0.2); /* Sombra leve */
       transition: all 0.3s ease; /* Transição suave para hover */
@@ -149,9 +149,9 @@ body {
     }
 
     .card-outro {
-      border: 2px solid #f6c23e; /* Borda verde */
+      border: 2px solid #1cc88a; /* Borda verde */
       border-radius: 8px; /* Bordas arredondadas */
-      background:#f6c23e;
+      background:#1cc88a;
       color: white;
       box-shadow: 0 4px 12px rgba(111, 66, 193, 0.2); /* Sombra leve */
       transition: all 0.3s ease; /* Transição suave para hover */
