@@ -399,7 +399,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <?= $stats['total_feminino'] ?? 0 ?>,
           <?= $stats['total_outro'] ?? 0 ?>
         ],
-        backgroundColor: ['#4e73df', '#e74a3b', '#f6c23e'],
+        backgroundColor: ['#4e73df', '#e74a3b', '#1cc88a'],
         borderWidth: 0 // Remove a linha branca entre as fatias
       }
     ]
