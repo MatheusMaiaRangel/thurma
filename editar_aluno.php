@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="col-md-6">
-                <label class="form-label">pais</label>
+                <label class="form-label">País</label>
                 <select class="form-select" name="pais">
                     <option value="" disabled>Informe o nome do país</option>
                     <option value="Brasil" <?= $alunos['pais'] === 'Brasil' ? 'selected' : '' ?>>Brasil</option>
